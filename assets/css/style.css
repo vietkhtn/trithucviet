@@ -1,0 +1,260 @@
+body {
+    font-family: roboto, sans-serif;
+    background-color: #E9EBEE;
+    margin: 0;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+}
+
+.align-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    font-family: Helvetica, Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.left-side {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    flex-basis: 50%;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 33px;
+}
+
+.sign-up-form {
+    margin-top: 10px;
+}
+
+.text-field {
+    width: 330px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.text-input {
+    height: 25px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 0.8rem;
+    width: 70%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.bday {
+    font-size: 19px;
+    color: #141823;
+    margin: 0.8rem 0 5px 0;
+}
+
+.select-body {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #bdc7d8;
+    color: #141823;
+    border-radius: 5px;
+}
+
+.gender-wrap {
+    margin: 10px 0;
+}
+
+.term {
+    font-size: 12px;
+}
+
+input.sign-up {
+    background-color: #0095FF;
+    box-shadow: inset 0 1px 1px #0095FF;
+    padding: 10px 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 14px 0;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+img {
+    width: 60%;
+}
+
+.header {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 8px 10%;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    color: black;
+    width: 85%;
+    height: 40px;
+    border-top: 3px solid #f48024;
+}
+
+.logo {
+    margin: auto 0;
+    font-size: 40px;
+    flex-basis: 50%;
+}
+
+.sign-in-form {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.email-mobile-input {
+    margin-left: 10px;
+}
+
+.input-text {
+    font-size: 14px;
+    padding-bottom: 5px;
+    margin-top: -20px;
+}
+
+.password-input {
+    margin-left: 1rem;
+    margin-top: 20px;
+    margin-right: 1rem;
+}
+
+.forgotten-acc {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #9cb48d;
+    cursor: pointer;
+}
+
+button.sign-in.signup {
+    width: 80px;
+    height: 30px;
+    background-color: #e1ecf4;
+    color: #39739d;
+    border: 1px solid #bbc0c4;
+    border-radius: 5px;
+    box-shadow: 0 0 1px black;
+    margin-top: 18px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button.sign-in.login {
+    width: 80px;
+    height: 30px;
+    background-color: #0095FF;
+    color: white;
+    border: 1px solid #bbc0c4;
+    border-radius: 5px;
+    box-shadow: 0 0 1px black;
+    margin-top: 18px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+img.img-logo {
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    margin-top: -7px;
+}
+
+
+/* icon in search input */
+label {
+    position: relative;
+  }
+  
+label > .icon {
+    position: absolute;
+    top: 90%;
+    left: 25px;
+    transform: translateY(-50%);
+    color: silver;
+}
+  
+label > input {
+    padding-left: calc(1em + 10px + 8px);
+    width: 500px;
+    height: 25px;
+    border: 1px solid #bbc0c4;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 1rem;
+    padding-block: 3px;
+}
+  
+  /*
+    SVG SpriteSheet
+  */
+  
+  .spritesheet {
+    display: none;
+  }
+  
+  .icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+  .grid {
+      display: flex;
+      font-size: 14px;
+  }
+
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.grid-cell {
+    margin: 15px;
+    margin-top: 0px;
+    color: #676767;
+    cursor: pointer;
+}
