@@ -205,4 +205,14 @@ $(function() {
             }
         }
     })
+
+    // Open/Close post question form when click Ask Question button
+    $('.ask-question-button').on('click', function(){
+        if (document.getElementById('question-post').style.display === '' || document.getElementById('question-post').style.display === 'none'){
+            $('.profile-questtion-post').show('0.5');
+        }
+        else {
+            $('.profile-questtion-post').hide('0.5');
+        }
+    })
 })

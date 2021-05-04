@@ -387,15 +387,16 @@ input.loginButton {
 /* Cover Photo Profile Page */
 .main-area {
     margin-left: 50px;
+    margin-right: 50px;
     display: flex;
 }
 
 .profile-left-wrap {
-    flex-basis: 80%;
+    flex-basis: 15%;
 }
 
 .profile-right-wrap {
-    flex-basis: 20%;
+    flex-basis: 80%;
 }
 
 .profile-cover-wrap {
@@ -866,19 +867,58 @@ img.add-profile-css {
 
 button.edit-content-button-css {
     border: none;
-    width: 20px;
-    height: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
-    background-color: white;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
 }
 
 .active {
     border: 1px solid crimson;
 }
 
+/* Ask Question Button */
+.ask-question-button{
+    background-color: #f48024;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 16%;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin-left: 708px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ask-question-button:hover{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 16%;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f48024;
+    margin-left: 708px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Question Post */
+.profile-questtion-post {
+    display: none;
+}
 
 /* Tag in question */
 .tag-space-container {
@@ -898,7 +938,6 @@ button.edit-content-button-css {
     margin-left: 10px;
 }
 
-/* Ask Question Button */
 .ask-button-wrap{
     background-color: white;
     border-bottom-left-radius: 10px;
@@ -916,7 +955,7 @@ button.edit-content-button-css {
     font-size: 12px;
     font-weight: 500;
     color: white;
-    margin-left: 718px;
+    margin-left: 684px;
     cursor: pointer;
 }
 
@@ -931,7 +970,7 @@ button.edit-content-button-css {
     font-size: 12px;
     font-weight: 500;
     color: #f48024;
-    margin-left: 718px;
+    margin-left: 684px;
     cursor: pointer;
 }
 
