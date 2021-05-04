@@ -133,6 +133,8 @@ INSERT INTO `token` (`id`, `token`, `user_id`) VALUES
 -- Table structure for table `users`
 --
 
+use `bitgqltbcw1nl6jid2u2`;
+
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
