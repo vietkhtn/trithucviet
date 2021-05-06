@@ -45,6 +45,14 @@ class User {
         return $user->user_id;
     }
 
+    public function userLinkByUserId($userId) {
+        $statement = $this->pdo->prepare('SELECT userLink FROM users WHERE user_id = :userId');
+        $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $statement->execute();
+        $user = $statement->fetch(PDO::FETCH_OBJ);
+        return $user->userLink;
+    }
+
     public function create($table, $fields = array()) {
         $columns = implode(',', array_keys($fields)); // first-name, last-name, email,...
         $values = ':'.implode(', :', array_keys($fields)); // :firstname, :lastname,...
