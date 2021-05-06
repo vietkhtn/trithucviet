@@ -3,8 +3,7 @@
 class DB {
 
     private static function connnect() {
-        $pdo = new PDO('mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4', 'root','');
-
+        $pdo = new PDO('mysql:host=bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com;port=3306;dbname=bitgqltbcw1nl6jid2u2;charset=utf8mb4', 'uboe6mrf9gqq6mvo', 'LZ55sk6B8o7IjVP5DyYM');
         // Report error and exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
