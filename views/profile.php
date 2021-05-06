@@ -14,6 +14,7 @@
     <script src="..\assets\js\profile.js"></script>
 </head>
     <script type="text/javascript">
+        let userId = '<?php echo $user_id?>';
         // Auto adjust iframe height depend on content typing
         function resizeFrameHeight() {
             document.getElementById('questionText').contentWindow.document.designMode = "on";       
