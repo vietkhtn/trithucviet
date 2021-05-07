@@ -249,6 +249,10 @@
                                     </div>
                                 </div>
                             <?php } ?>
+
+                            <div class="ptaf-wrap">
+                                <?php $loadFromQuestion->postQuestionData($user_id, $profileId, 20) ?>
+                            </div>
                         </div>
                     </div>
             </div>

@@ -11,6 +11,12 @@ body {
 
 a {
     text-decoration: none;
+    color: #0077CC;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #022c4b;
 }
 
 li {
@@ -927,16 +933,55 @@ button.edit-content-button-css {
 }
 
 .tag-name-wrapper {
-    background-color: #f48024;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    box-shadow: 2px 2px lightgrey;
+    background-color: #ffefdc ;
+    color: #f48024;
+    font-size: 12px;
+    font-weight: 500;
     text-align: center;
     border: 1px solid lightgrey;
     border-radius: 3px;
     margin-left: 10px;
     padding: 5px;
+    cursor: pointer;
+}
+
+.tag-name-wrapper:hover {
+    background-color: #ffcf95 ;
+    color: #f48024;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    margin-left: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tag-name-posted-wrapper {
+    background-color: #ffefdc ;
+    color: #f48024;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tag-name-posted-wrapper:hover {
+    background-color: #ffcf95 ;
+    color: #f48024;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .ask-button-wrap{
@@ -979,4 +1024,181 @@ button.edit-content-button-css {
     width: fit-content;
     cursor: pointer;
     background-color: aquamarine;
+}
+
+/* TimeLine */
+.dott {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.news-feed-text {
+    margin: 12px 0;
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px gray;
+}
+
+.pro-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.nf-pro-privacy {
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 20px;
+}
+
+.nf-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nf-1-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nf-1-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9dfd3;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.nf-pro-time-privacy {
+    display: flex;
+}
+
+.nf-pro-name-time {
+    margin-left: 5px;
+}
+
+.timeline-post-title{
+    color: #0077cc;
+    cursor: pointer;
+}
+
+.timeline-post-title:hover{
+    color: #1c99f3;
+    cursor: pointer;
+}
+
+.timeline-post-user{
+    color: #3c4146;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.nf-pro-name {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nf-pro-time-privacy {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nf-pro-time {
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.nf-1-right-dott {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.nf-2-text {
+    margin: 10px 0;
+}
+
+.nf-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.post-option-details {
+    position: absolute;
+    font-size: 12px;
+    color: #0000009e;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+.post-option-details ul li {
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.post-option-details ul li:hover {
+    background-color: lightgray;
+}
+
+.post-option-details ul {
+    margin: 5px;
+    padding: 0;
+}
+
+.likeReact {
+    background-image: url('../images/likeReact.JPG');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.nf-3-react-username {
+    font-size: 12px;
+    color: gray;
+}
+
+.nf-4 {
+    font-size: 13px;
+    margin: 5px;
+}
+
+.ra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.like-action-icon img {
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.comment-action-icon img {
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.share-action-icon img {
+    margin-right: 3px;
+}
+
+.nf-5 {
+    margin: 10px 0;
 }

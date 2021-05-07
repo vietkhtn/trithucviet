@@ -73,6 +73,7 @@ $(function() {
                             $('.profile-pic-me').attr('src', '' + data1 + '');
                             $('.my-icon-ask').attr('src', '' + data1 + '');
                             $('.user-image-pic').attr('src', '' + data1 + '');
+                            location.reload();
                         }
                     })
                 }
@@ -106,8 +107,8 @@ $(function() {
                                 questionText.document.execCommand(cmd, false, data.data.url); // render image from API
                                 const images = questionText.document.querySelectorAll('img');
                                 images.forEach(item =>{
-                                    item.style.maxWidth = "350px";
-                                    item.style.maxHeight = "350px";
+                                    item.style.maxWidth = "400px";
+                                    item.style.maxHeight = "400px";
                                 })
                             }
                         });
@@ -200,5 +201,46 @@ $(function() {
         else {
             $('.profile-questtion-post').hide('0.5');
         }
+    })
+
+    //Handle post question click
+    $('.ask-button').on('click', function(){
+        var title = document.getElementById('questionTitle').value;
+        var listTag = document.getElementsByClassName('tag-name-wrapper');
+        var iframe = document.getElementById('questionText');
+        var content = iframe.contentWindow.document.body.innerHTML;
+        var tags = new Array();
+        for (var i = 0; i < listTag.length; i++) {
+            tags.push(listTag[i].innerText);
+        }
+        console.log(title, tags, content);
+        var formData = new FormData();
+        formData.append('questionTitle', title);
+        formData.append('questionTags', tags);
+        formData.append('questionContent', content);
+        formData.append('userId', userId);
+
+        $.ajax({
+            url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: formData,
+            type: 'post',
+            success: function(postData){
+                location.reload();
+            }
+        })
+        
+    })
+
+    // Shorten question content
+    questionContents = document.querySelectorAll(".nf-4");
+    questionContents.forEach(item => {
+        if (item.innerText.length > 200) {
+            item.innerText = item.innerText.substr(0,200) + '...';
+        }else{
+            item.innerText = item.innerText;
+        }   
     })
 })
