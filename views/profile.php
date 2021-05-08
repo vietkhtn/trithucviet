@@ -12,6 +12,7 @@
     <title><?php echo ''.$profileData->firstName.' '.$profileData->lastName.'' ?></title>
     <script src="..\assets\js\jquery.js"></script>
     <script src="..\assets\js\profile.js"></script>
+    <script src="..\assets\js\askQuestion.js"></script>
 </head>
     <script type="text/javascript">
         let userId = '<?php echo $user_id?>';
