@@ -257,24 +257,33 @@ $(function() {
 
     // Answer
     let answers = document.getElementsByClassName('question-answer');
+    let listAnswer = new Array();
     for(var i = 0; i < answers.length; i++){
-        console.log(i, answers[i].innerText);
-        if (parseInt(answers[i].children[0].innerText) <= 1){
-            answers[i].children[1].innerText = "answer";
+        listAnswer.push(answers[i]);
+    }
+
+    for(var i = 0; i < listAnswer.length; i++){
+        if (parseInt(listAnswer[i].children[0].innerText) <= 1){
+            listAnswer[i].children[1].innerText = "answer";
         }else{
-            answers[i].children[1].innerText = "answers";
-            answers[i].className = "question-answered";
+            listAnswer[i].children[1].innerText = "answers";
+            listAnswer[i].className = "question-answered";
         }
     }
+
     // Spam
     let spams = document.getElementsByClassName('question-spam');
+    let listSpam = new Array();
     for(var i = 0; i < spams.length; i++){
-        console.log(i, spams[i].innerText);
-        if (parseInt(spams[i].children[0].innerText) <= 1){
-            spams[i].children[1].innerText = "spam";
+    listSpam.push(spams[i]);
+    }
+
+    for(var i = 0; i < listSpam.length; i++){
+        if (parseInt(listSpam[i].children[0].innerText) <= 0){
+            listSpam[i].children[1].innerText = "spam";
         }else{
-            spams[i].children[1].innerText = "spams";
-            spams[i].className = "question-isspam";
+            listSpam[i].children[1].innerText = "spams";
+            listSpam[i].className = "question-isspam";
         }
     }
 
