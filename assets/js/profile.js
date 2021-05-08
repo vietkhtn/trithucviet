@@ -238,9 +238,44 @@ $(function() {
     questionContents = document.querySelectorAll(".nf-4");
     questionContents.forEach(item => {
         if (item.innerText.length > 200) {
-            item.innerText = item.innerText.substr(0,200) + '...';
+            item.innerText = item.innerText.substr(0, 200) + '...';
         }else{
             item.innerText = item.innerText;
         }   
     })
+
+    // Display dynamic label in stat container
+    // Vote
+    let votes = document.getElementsByClassName('question-vote');
+    for(var i = 0; i < votes.length; i++){
+        if (parseInt(votes[i].children[0].innerText) <= 1){
+            votes[i].children[1].innerText = "vote";
+        }else{
+            votes[i].children[1].innerText = "votes";
+        }
+    }
+
+    // Answer
+    let answers = document.getElementsByClassName('question-answer');
+    for(var i = 0; i < answers.length; i++){
+        console.log(i, answers[i].innerText);
+        if (parseInt(answers[i].children[0].innerText) <= 1){
+            answers[i].children[1].innerText = "answer";
+        }else{
+            answers[i].children[1].innerText = "answers";
+            answers[i].className = "question-answered";
+        }
+    }
+    // Spam
+    let spams = document.getElementsByClassName('question-spam');
+    for(var i = 0; i < spams.length; i++){
+        console.log(i, spams[i].innerText);
+        if (parseInt(spams[i].children[0].innerText) <= 1){
+            spams[i].children[1].innerText = "spam";
+        }else{
+            spams[i].children[1].innerText = "spams";
+            spams[i].className = "question-isspam";
+        }
+    }
+
 })
