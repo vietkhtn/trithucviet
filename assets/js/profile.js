@@ -263,8 +263,11 @@ $(function() {
     }
 
     for(var i = 0; i < listAnswer.length; i++){
-        if (parseInt(listAnswer[i].children[0].innerText) <= 1){
+        if (parseInt(listAnswer[i].children[0].innerText) < 1){
             listAnswer[i].children[1].innerText = "answer";
+        }else if(parseInt(listAnswer[i].children[0].innerText) == 1){
+            listAnswer[i].children[1].innerText = "answer";
+            listAnswer[i].className = "question-answered";
         }else{
             listAnswer[i].children[1].innerText = "answers";
             listAnswer[i].className = "question-answered";
@@ -275,12 +278,15 @@ $(function() {
     let spams = document.getElementsByClassName('question-spam');
     let listSpam = new Array();
     for(var i = 0; i < spams.length; i++){
-    listSpam.push(spams[i]);
+        listSpam.push(spams[i]);
     }
 
     for(var i = 0; i < listSpam.length; i++){
-        if (parseInt(listSpam[i].children[0].innerText) <= 0){
+        if (parseInt(listSpam[i].children[0].innerText) == 0){
             listSpam[i].children[1].innerText = "spam";
+        }else if(parseInt(listSpam[i].children[0].innerText) == 1) {
+            listSpam[i].children[1].innerText = "spam";
+            listSpam[i].className = "question-isspam";
         }else{
             listSpam[i].children[1].innerText = "spams";
             listSpam[i].className = "question-isspam";
