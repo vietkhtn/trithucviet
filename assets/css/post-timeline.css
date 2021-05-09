@@ -1,0 +1,232 @@
+/* TimeLine */
+.dott {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.news-feed-content {
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: -3px;
+}
+
+.stat-container {
+    display: flex;
+    width: 10%;
+    font-size: 13px;
+    color: #6A7A7C;
+    justify-content: center;
+}
+
+.news-feed-text {
+    /* margin: 12px 0; */
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    width: 86%;
+}
+
+.question-vote {
+    text-align: center;
+    margin: 10px;
+}
+
+.question-answer {
+    text-align: center;
+    margin: 10px;
+}
+
+.question-unanswered {
+    text-align: center;
+    margin: 10px;
+}
+
+.question-answered {
+    text-align: center;
+    border: 1px solid #48a868;
+    border-radius: 3px;
+    color: #48a868;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.question-spam {
+    text-align: center;
+    margin: 10px;
+}
+
+.question-isspam {
+    text-align: center;
+    border: 1px solid #ff7c7c;
+    border-radius: 3px;
+    color: #ff7c7c;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.pro-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.nf-pro-privacy {
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 20px;
+}
+
+.nf-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nf-1-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nf-1-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9dfd3;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.nf-pro-time-privacy {
+    display: flex;
+}
+
+.nf-pro-name-time {
+    margin-left: 5px;
+}
+
+.timeline-post-title{
+    color: #0077cc;
+    cursor: pointer;
+}
+
+.timeline-post-title:hover{
+    color: #1c99f3;
+    cursor: pointer;
+}
+
+.timeline-post-user{
+    color: #3c4146;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.nf-pro-name {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nf-pro-time-privacy {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nf-pro-time {
+    font-size: 12px;
+    color: gray;
+    margin-top: 5px;
+}
+
+.nf-1-right-dott {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.nf-2-text {
+    margin: 10px 0;
+}
+
+.nf-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.post-option-details {
+    position: absolute;
+    font-size: 12px;
+    color: #0000009e;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px grey;
+}
+
+.post-option-details ul li {
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.post-option-details ul li:hover {
+    background-color: lightgray;
+}
+
+.post-option-details ul {
+    margin: 5px;
+    padding: 0;
+}
+
+.likeReact {
+    background-image: url('../images/likeReact.JPG');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.nf-3-react-username {
+    font-size: 12px;
+    color: gray;
+}
+
+.nf-4 {
+    font-size: 13px;
+    margin: 5px;
+}
+
+.ra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.like-action-icon img {
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.comment-action-icon img {
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.share-action-icon img {
+    margin-right: 3px;
+}
+
+.nf-5 {
+    margin: 10px 0;
+}

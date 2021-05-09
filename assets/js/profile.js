@@ -80,50 +80,6 @@ $(function() {
             });
     })
 
-    // Set font-size questionText 
-    $('#questionText').contents().find('body').css('font-size','12px');
-
-    // Open/Close post question form when click Ask Question button
-    $('.ask-question-button').on('click', function(){
-        if (document.getElementById('question-post').style.display === '' || document.getElementById('question-post').style.display === 'none'){
-            $('.profile-questtion-post').show('0.5');
-        }
-        else {
-            $('.profile-questtion-post').hide('0.5');
-        }
-    })
-
-    //Handle post question click
-    $('.ask-button').on('click', function(){
-        var title = document.getElementById('questionTitle').value;
-        var listTag = document.getElementsByClassName('tag-name-wrapper');
-        var iframe = document.getElementById('questionText');
-        var content = iframe.contentWindow.document.body.innerHTML;
-        var tags = new Array();
-        for (var i = 0; i < listTag.length; i++) {
-            tags.push(listTag[i].innerText);
-        }
-        console.log(title, tags, content);
-        var formData = new FormData();
-        formData.append('questionTitle', title);
-        formData.append('questionTags', tags);
-        formData.append('questionContent', content);
-        formData.append('userId', userId);
-
-        $.ajax({
-            url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: formData,
-            type: 'post',
-            success: function(postData){
-                location.reload();
-            }
-        })
-        
-    })
-
     // Shorten question content
     questionContents = document.querySelectorAll(".nf-4");
     questionContents.forEach(item => {
