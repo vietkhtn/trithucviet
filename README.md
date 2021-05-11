@@ -12,17 +12,8 @@
 5. PORT="3306"
 
 ## Info API check bad word
+- URL: [checkapibadword](https://checkbadwordapi.herokuapp.com/)
+- Link project: [github](https://github.com/PhamTrung99/Check_Bad_Word_API)
+- API document: [document](https://checkbadwordapi.herokuapp.com/api-docs/)
+- API_KEY: Y2hlY2tiYWR3b3JkYXBpa2V5
 
--  **Source**: [rapidapi.com](https://rapidapi.com/neutrinoapi/api/bad-word-filter/endpoints)
-
-- Phương thức: **POST**
-
-- Nội dung Header:
->"content-type": "application/x-www-form-urlencoded"
-> "x-rapidapi-key":  "52ea54c5b7mshc424847b731c1e2p10141fjsn7f61da8092fc",
->"x-rapidapi-host": "neutrinoapi-bad-word-filter.p.rapidapi.com",
->"useQueryString": true
-- Body:
->"censor-character": "*",
-> "content": "Nội dung cần duyệt"
- 
