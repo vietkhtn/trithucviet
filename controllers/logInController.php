@@ -25,7 +25,7 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                     // Set user cookie
                     setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
                     // redirect to user page
-                    // $VIEW = require("../views/profile.php");
+                    $VIEW = require("../views/profile.php");
                     header ("Location: ../template/master-layout.php?username=$userLink");
                 }else{ // Wrong password
                     $error = MESSAGE::wrongPassword;
@@ -49,7 +49,7 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                 // Set user cookie
                 setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
                 // redirect to user page
-                // $VIEW = "../views/profile.php";
+                $VIEW = "../views/profile.php";
                 header ("Location: ../template/master-layout.php?username=$userLink");
             }else{ // Wrong password
                 $error = MESSAGE::wrongPassword;

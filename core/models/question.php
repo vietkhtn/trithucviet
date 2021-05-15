@@ -50,7 +50,7 @@ class Question extends User {
                                     <div class="nf-1-left">
                                         <div class="nf-pro-name-time">
                                             <div class="nf-pro-name">
-                                                <a href='http://<?php  echo ''.CONSTANT::BASE_URL_VIEWS.$question->title; ?>' class="timeline-post-title">
+                                                <a href='http://<?php  echo ''.CONSTANT::BASE_URL_VIEWS.'question-details.php'.$question->title; ?>' class="timeline-post-title">
                                                     <?php  echo $question->title; ?>
                                                 </a>
                                             </div>

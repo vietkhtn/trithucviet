@@ -130,30 +130,76 @@ $(function() {
         var listTag = document.getElementsByClassName('tag-name-wrapper');
         var iframe = document.getElementById('questionText');
         var content = iframe.contentWindow.document.body.innerHTML;
+        var contentText = iframe.contentWindow.document.body.innerText;
         var tags = new Array();
         for (var i = 0; i < listTag.length; i++) {
             tags.push(listTag[i].innerText);
         }
-        console.log(title, tags, content);
-        var formData = new FormData();
-        formData.append('questionTitle', title);
-        formData.append('questionTags', tags);
-        formData.append('questionContent', content);
-        formData.append('userId', userId);
-
+        //Call API check Bad Word in content
         $.ajax({
-            url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: formData,
-            type: 'post',
-            success: function(postData){
-                location.reload();
-            }
+            url: 'https://checkbadwordapi.herokuapp.com/check/' + contentText,
+            type: 'GET',
+            headers: {
+                "accept": "application/json",
+                "api-key": "Y2hlY2tiYWR3b3JkYXBpa2V5"
+            },
+            success: function (data) {
+                // if content contains bad words -> alert error
+                if (data.is_bad == true){
+                    alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
+                } 
+
+                // else if content is good -> store in db
+                else {
+                    var formData = new FormData();
+                    formData.append('questionTitle', title);
+                    formData.append('questionTags', tags);
+                    formData.append('questionContent', content);
+                    formData.append('userId', userId);
+
+                    $.ajax({
+                        url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php',
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        type: 'post',
+                        success: function(postData){
+                            location.reload();
+                        }
+                    })
+                }
+        },
+        error: function(){
+            alert("Error: Cannot load data");
+        }
         })
-        
     })
+
+    //     var tags = new Array();
+    //     for (var i = 0; i < listTag.length; i++) {
+    //         tags.push(listTag[i].innerText);
+    //     }
+    //     console.log(title, tags, content);
+    //     var formData = new FormData();
+    //     formData.append('questionTitle', title);
+    //     formData.append('questionTags', tags);
+    //     formData.append('questionContent', content);
+    //     formData.append('userId', userId);
+
+    //     $.ajax({
+    //         url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
+    //         cache: false,
+    //         contentType: false,
+    //         processData: false,
+    //         data: formData,
+    //         type: 'post',
+    //         success: function(postData){
+    //             location.reload();
+    //         }
+    //     })
+        
+    // })
 
 
 })
