@@ -1,4 +1,5 @@
-<?php
+ 
+ <?php
     include '../controllers/profileController.php';
 ?>
 <!DOCTYPE html>
