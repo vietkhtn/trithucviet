@@ -1,5 +1,7 @@
 <?php 
-class Profile {
+// include 'Base.php';
+
+class Profile extends Base{
     protected $pdo;
 
     function __construct($pdo) {
