@@ -1,7 +1,4 @@
 <?php 
-
-include 'var.php';
-
 class DB {
 
     public $DB_NAME="bitgqltbcw1nl6jid2u2";

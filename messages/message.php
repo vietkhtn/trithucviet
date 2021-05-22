@@ -25,5 +25,4 @@ class Message {
     public const wrongPassword = "Wrong password. Please try again.";
 }
 
-
 ?>

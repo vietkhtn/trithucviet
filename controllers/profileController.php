@@ -1,7 +1,7 @@
 <?php 
 
-include '../connect/login.php';
-include '../core/load.php';
+require_once '../connect/login.php';
+require_once '../core/load.php';
 
 if (login::isLoggedIn()){
     $user_id = login::isLoggedIn();

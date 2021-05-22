@@ -1,8 +1,8 @@
 <?php 
 
-require '../core/load.php';
-require '../messages/message.php';
-require '../connect/DB.php';
+require_once '../core/load.php';
+require_once '../messages/message.php';
+require_once '../connect/DB.php';
 
 if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
         $firstName = $_POST['first-name'];

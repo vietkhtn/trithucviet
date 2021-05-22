@@ -1,12 +1,16 @@
 <?php
 
-include 'database/connection.php';
-include 'models/user.php';
-include 'models/question.php';
-include 'models/profile.php';
+require_once 'database/connection.php';
+require_once 'models/Base.php';
+require_once 'models/constant.php';
+require_once 'models/user.php';
+require_once 'models/question.php';
+require_once 'models/profile.php';
 
 global $pdo;
 
+$constant = new constant($pdo);
+$Base = new Base($pdo);
 $loadFromUser = new User($pdo);
 $loadFromQuestion = new Question($pdo);
 $loadFromProfle = new Profile($pdo);

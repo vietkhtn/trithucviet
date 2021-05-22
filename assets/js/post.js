@@ -175,31 +175,4 @@ $(function() {
         }
         })
     })
-
-    //     var tags = new Array();
-    //     for (var i = 0; i < listTag.length; i++) {
-    //         tags.push(listTag[i].innerText);
-    //     }
-    //     console.log(title, tags, content);
-    //     var formData = new FormData();
-    //     formData.append('questionTitle', title);
-    //     formData.append('questionTags', tags);
-    //     formData.append('questionContent', content);
-    //     formData.append('userId', userId);
-
-    //     $.ajax({
-    //         url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false,
-    //         data: formData,
-    //         type: 'post',
-    //         success: function(postData){
-    //             location.reload();
-    //         }
-    //     })
-        
-    // })
-
-
 })

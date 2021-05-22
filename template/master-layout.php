@@ -1,5 +1,6 @@
 <?php
-    include '../controllers/profileController.php';
+    require_once '../controllers/logInController.php';
+    require_once '../controllers/profileController.php';
 ?>
 
 <!DOCTYPE html>

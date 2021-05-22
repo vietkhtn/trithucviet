@@ -1,5 +1,4 @@
 <?php 
-include 'Base.php';
 
 class User extends Base{
     protected $pdo;

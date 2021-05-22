@@ -1,6 +1,4 @@
 <?php 
-include "constant.php";
-
 class Question extends User {
 
     function __construct($pdo) {
@@ -21,6 +19,7 @@ class Question extends User {
         $statement->execute();
         $questions = $statement->fetchAll(PDO::FETCH_OBJ);
 
+        // List Quesitons in page
         forEach ($questions as $question) {
             ?>
                 <div class="profile-timeline">
