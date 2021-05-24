@@ -33,5 +33,6 @@
         <li class="mb-1">
             <div style="font-size: small;"><b>Stack Overflow for Teams </b> – Collaborate and share knowledge with a private group</div>
         </li>
+        <li class="border-top my-3"></li>
     </ul>
 </div>
