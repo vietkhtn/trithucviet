@@ -1,3 +1,7 @@
+<?php
+    // require_once '../controllers/profileController.php';
+?>
+
 <script type="text/javascript">
     let userId = '<?php echo $user_id?>';
     // Auto adjust iframe height depend on content typing
@@ -57,12 +61,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Cover bottom part -->
                     <div class="cover-bottom-part"> 
-                        <div class="timeline-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Timeline</div>
-                        <div class="about-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>About</div>
-                        <div class="friends-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Friends</div>
-                        <div class="ph0tos-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Photos</div>
+                        <div class="timeline-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Questions</div>
+                        <div class="about-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Tags</div>
+                        <div class="friends-button align-middle cover-button-css" data-userid='<?php echo $user_id; ?>' data-profileid='<?php echo $profileId ?>'>Users</div>
                     </div>
+                    <!-- Intro Info -->
                     <div class="bio-timeline">
                         <div class="bio-wrap">
                             <div class="bio-intro">

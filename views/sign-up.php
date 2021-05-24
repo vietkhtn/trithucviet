@@ -51,7 +51,6 @@
             <button type="button" href="log-in.php" class="sign-in login">Log in</button>
             </a>
         </div>
-
     </div>
     <div class="main">
         <div class="left-side">

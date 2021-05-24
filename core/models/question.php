@@ -5,6 +5,13 @@ class Question extends User {
         $this->pdo = $pdo;
     }
 
+    public function questionData($questionId) {
+        $statement = $this->pdo->prepare('SELECT * FROM question WHERE question_id = :question_id');
+        $statement->bindParam(':question_id', $questionId, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
     public function postQuestionData($userId, $profileId, $num) {
         $userData = $this->userData($userId);
 
@@ -49,7 +56,7 @@ class Question extends User {
                                     <div class="nf-1-left">
                                         <div class="nf-pro-name-time">
                                             <div class="nf-pro-name">
-                                                <a href='http://<?php  echo ''.CONSTANT::BASE_URL_VIEWS.'question-details.php'.$question->title; ?>' class="timeline-post-title">
+                                                <a href='<?php  echo ''.CONSTANT::BASE_URL_TEMPLATE.'master-layout.php?question='.$question->question_id; ?>' class="timeline-post-title">
                                                     <?php  echo $question->title; ?>
                                                 </a>
                                             </div>
@@ -93,6 +100,36 @@ class Question extends User {
         }
     }
 
-}
 
+    public function recentQuestions($num) {
+
+        $statement = $this->pdo->prepare('SELECT * FROM question ORDER BY question.postOn DESC LIMIT :num'); // Get lasted question posts
+
+        $statement->bindParam(':num', $num, PDO::PARAM_INT);
+
+        $statement->execute();
+        $questions = $statement->fetchAll(PDO::FETCH_OBJ);
+
+        // List Quesitons in page
+        forEach ($questions as $question) {
+            ?>
+                <div class="question-row">
+                    <div class="question-stat-lite-container">
+                        <div class="question-voted-count-lite">
+                            <?php echo $question->voteCount; ?>
+                        </div>
+                    </div>
+                    <div class="question-title-lite-container">
+                        <div class="question-title-lite">
+                            <a href='<?php  echo ''.CONSTANT::BASE_URL_TEMPLATE.'master-layout.php?question='.$question->question_id; ?>' class="timeline-post-title">
+                                <?php  echo $question->title; ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+        }
+    }
+
+}
 ?>

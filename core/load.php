@@ -9,8 +9,8 @@ require_once 'models/profile.php';
 
 global $pdo;
 
-$constant = new constant($pdo);
 $Base = new Base($pdo);
+$constant = new constant($pdo);
 $loadFromUser = new User($pdo);
 $loadFromQuestion = new Question($pdo);
 $loadFromProfle = new Profile($pdo);

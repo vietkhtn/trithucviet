@@ -154,6 +154,18 @@ input.sign-up {
     margin-right: 1rem;
 }
 
+.signup-button {
+    margin-left: 10px;
+}
+
+.signup-button {
+    margin-left: 10px;
+}
+
+.login-button {
+    margin-left: 5px;
+}
+
 button.sign-in.signup {
     width: 80px;
     height: 30px;
@@ -207,12 +219,13 @@ label > .icon {
   
 label > input {
     padding-left: calc(1em + 10px + 8px);
-    width: 618px;
+    width: 48vw;
     height: 20px;
     border: 1px solid #bbc0c4;
     border-radius: 3px;
     font-size: 12px;
     margin-left: 1rem;
+    margin-top: 5px;
     padding-block: 3px;
 }
   

@@ -1,7 +1,7 @@
 <!-- Top Left -->
 <div class="top-left-part">
                 <!-- Logo -->
-                <a href="../views/index.php"><img class="img-logo"src="../assets/image/stackoverflow.png"/></a>
+                <a href="master-layout.php?username=<?php echo $profileData->userLink ?>"><img class="img-logo"src="../assets/image/stackoverflow.png"/></a>
                 <!-- Search Bar-->
                 <div class="search-wrap">
                     <label clas="name-label">
@@ -24,7 +24,7 @@
             <div class="top-right-part">
                 <!-- Name Wrap -->
                 <div class="topic-name-wrap">
-                    <a href="master-layout.php?username=<?php echo $profileData->userLink ?>" class="top-pic-name">
+                    <a href="layout-user-login.php?username=<?php echo $profileData->userLink ?>" class="top-pic-name">
                         <!-- User Image -->
                         <div class="user-image"><img src="<?php echo $profileData->profilePic ?>" class="user-image-pic" ></div>
                         <!-- User Name -->
@@ -50,3 +50,4 @@
                     </svg>
                 </div>
             </div>
+</div>
