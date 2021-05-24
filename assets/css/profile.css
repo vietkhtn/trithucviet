@@ -1,0 +1,385 @@
+/* Profile Page */
+
+/* Image and Name on top bar Profile Page */
+.top-pic-name {
+    display: flex;
+}
+
+/* Cover Photo Profile Page */
+.main-area {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+}
+
+.profile-left-wrap {
+    flex-basis: 15%;
+}
+
+.profile-left-wrap-profile {
+    flex-basis: 10%;
+}
+
+.profile-right-wrap {
+    flex-basis: 80%;
+}
+
+.profile-cover-wrap {
+    border-radius: 2px;
+    height: 250px;
+    background-size: 100%;
+    background-position: center;
+}
+
+.add-cover-photo {
+    font-size: 12px;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 5px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.add-cover-photo:hover {
+    font-size: 12px;
+    color: black;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid black;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.upload-cover-opt-wrap {
+    position: relative;
+}
+
+.add-cover-options {
+    margin-left: 10px;
+    margin-top: -10px;
+    font-size: 13px;
+    position: absolute;
+    padding: 10px 34px;
+    box-shadow: 0 0 20px black;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.2s;
+    z-index: 1;
+    display: none;
+}
+
+.file-upload {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+label.file-upload-label {
+    display: block;
+    color: #000;
+    border-radius: .4em;
+    transition: background .3s;
+    cursor: pointer;
+}
+
+.upload-cover-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1px;
+    width: 0px;
+    height: 100%;
+    opacity: 0;
+}
+
+.add-cover.text {
+    margin-left: 5px;
+}
+
+.upload-photo-logo {
+    width: 25px;
+}
+
+.select-cover-photo {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.dont-add-cover-photo {
+    padding-bottom: 57px;
+}
+
+/* Profile Photo */
+.profile-photo-rest-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-pic-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 75px 0 0 15px;
+}
+
+img.profile-pic-me {
+    height: 135px;
+    width: 135px;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.profile-pic {
+    position: relative;
+}
+
+.profile-pic-upload {
+    background-color: black;
+    color: white;
+    height: 66px;
+    width: 136px;
+    position: absolute;
+    bottom: 0;
+    border-bottom-right-radius: 84px;
+    border-bottom-left-radius: 84px;
+    margin-bottom: 9px;
+    margin-left: 4px;
+    opacity: 0;
+}
+
+.profile-pic-upload:hover {
+    background-color: black;
+    color: white;
+    height: 66px;
+    width: 136px;
+    position: absolute;
+    bottom: 0;
+    border-bottom-right-radius: 84px;
+    border-bottom-left-radius: 84px;
+    margin-bottom: 9px;
+    margin-left: 4px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.add-profile-photo {
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+img.upload-profile-pic-logo {
+    width: 25%;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+.upload-profile-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1px;
+    width: 0px;
+    height: 100%;
+    opacity: 0;
+}
+
+.profile-upload-label {
+    margin-left: -45px;
+    cursor: pointer;
+}
+
+.upload-profile-opt-wrap{
+    position: relative;
+}
+
+/* Cover Bottom Part */
+.cover-bottom-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cover-button-css {
+    /* color: black; */
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-left: 1px solid black;
+    color: #f48024;
+    cursor: pointer;
+}
+
+.cover-button-css:hover {
+    /* color: black; */
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border-left: 1px solid black;
+    color: #ffaf6d;
+    cursor: pointer;
+}
+
+.timeline-button.align-middle.cover-button-css {
+    margin-left: -195px;
+}
+
+.intro-icon-css {
+    width: 10%;
+    margin-right: 10px;
+}
+
+/* Profile Intro */
+.bio-timeline {
+    display: flex;
+    margin-top: 10px;
+}
+
+.bio-intro {
+    background-color: white;
+    width: 245px;
+    box-shadow: 0 0 1px grey;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 13px;
+}
+
+.intro-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    color: #847c7c;
+}
+
+.intro-icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.add-profile-message {
+    margin: 5px 0;
+}
+
+img.add-profile-css {
+    width: 25px;
+}
+
+.profile-details {
+    color: gray;
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.profile-1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.profile-3{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.profile-4{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.profile-5{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.blue {
+    color: #2851a3;
+    cursor: pointer;
+}
+
+.bio-feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.feature-text {
+    color: gray;
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+.add-feature-link.blue {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #2851a3;
+    border-radius: 3px;
+}
+
+.bio-feature-logo {
+    width: 20%;
+}
+
+.link-plus {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.link-plus-text {
+    padding-right: 5px;
+}

@@ -5,8 +5,18 @@ body {
     font-size: 16px;
 }
 
+body {
+    font-size: 16px;
+}
+
 a {
     text-decoration: none;
+    color: #0077CC;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #022c4b;
 }
 
 li {
@@ -31,21 +41,11 @@ input:focus {
     display: flex;
 }
 
-.left-side {
-    flex-basis: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-side {
-    flex-basis: 50%;
-}
-
 .error {
     color: red;
-    font-size: 14px;
-    margin-top: 33px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 7rem;
 }
 
 .sign-up-form {
@@ -53,7 +53,7 @@ input:focus {
 }
 
 .text-field {
-    width: 330px;
+    width: 340px;
     height: 25px;
     padding: 5px;
     border: 1px solid lightgray;
@@ -114,10 +114,6 @@ input.sign-up {
     cursor: pointer;
 }
 
-img {
-    width: 60%;
-}
-
 .header {
     font-family: Helvetica, Arial, sans-serif;
     padding: 8px 10%;
@@ -147,22 +143,27 @@ img {
 }
 
 .input-text {
-    font-size: 14px;
+    font-size: 12px;
     padding-bottom: 5px;
-    margin-top: -20px;
+    margin-top: 20px;
 }
 
 .password-input {
-    margin-left: 1rem;
+    margin-left: 5rem;
     margin-top: 20px;
     margin-right: 1rem;
 }
 
-.forgotten-acc {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #9cb48d;
-    cursor: pointer;
+.signup-button {
+    margin-left: 10px;
+}
+
+.signup-button {
+    margin-left: 10px;
+}
+
+.login-button {
+    margin-left: 5px;
 }
 
 button.sign-in.signup {
@@ -192,14 +193,18 @@ button.sign-in.login {
 }
 
 img.img-logo {
-    width: 180px;
-    height: 50px;
+    margin-left: -75px;
+    width: 135px;
+    height: 40px;
     cursor: pointer;
     margin-top: -7px;
 }
 
-
 /* icon in search input */
+a.top-bar-menu {
+    color: #676767;
+}
+
 label {
     position: relative;
   }
@@ -214,13 +219,13 @@ label > .icon {
   
 label > input {
     padding-left: calc(1em + 10px + 8px);
-    width: 500px;
-    height: 25px;
+    width: 48vw;
+    height: 20px;
     border: 1px solid #bbc0c4;
     border-radius: 3px;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 12px;
     margin-left: 1rem;
+    margin-top: 5px;
     padding-block: 3px;
 }
   
@@ -243,7 +248,7 @@ label > input {
 
   .grid {
       display: flex;
-      font-size: 14px;
+      font-size: 12px;
   }
 
 .list-reset {

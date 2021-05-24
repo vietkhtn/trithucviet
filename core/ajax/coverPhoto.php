@@ -1,30 +1,21 @@
 <?php 
 
-include '../load.php';
-include '../../connect/login.php';
+require_once '../load.php';
+require_once '../../connect/login.php';
 
 $user_id = login::isLoggedIn();
-echo $_POST['imageName'];
-if (isset($_POST['imageName'])){
-    $imageName = $loadFromUser->checkInput($_POST['imageName']);
+
+// Store CoverPic to DB
+if (isset($_POST['imageUrl'])){
+    $imageUrl = $loadFromUser->checkInput($_POST['imageUrl']);
     $user_id = $loadFromUser->checkInput($_POST['userId']);
     
-    $loadFromUser->update('profile', $user_id, array('coverPic' => $imageName));
+    $loadFromUser->update('profile', $user_id, array('coverPic' => $imageUrl));
 
 }else{
 
 }
 
-if ( 0 < $_FILES['file']['error']){
-    echo 'ERROR: '.$_FILES['file']['error'].'<br>';
-}else{
-    $path_directory = $_SERVER['DOCUMENT_ROOT']."/stackoverflow_v1/user/".$user_id."/coverPhoto/";
-    if( !file_exists($path_directory) && !is_dir($path_directory)){
-        mkdir($path_directory, 0777, true);
-    }
-    move_uploaded_file($_FILES['file']['tmp_name'], $path_directory.$_FILES['file']['name']);
-}
-
-    echo "/stackoverflow_v1/user/".$user_id."/coverPhoto/".$_FILES['file']['name'];
-
+// Get coverPic from DB
+    echo $loadFromProfle->coverPicByUserId($user_id);
 ?>

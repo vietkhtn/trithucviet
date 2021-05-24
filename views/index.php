@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-
+    <?php
+     $a = 2;
+    ?>
 </head>
 
 <body>
@@ -17,6 +19,7 @@
                 <a href="index.php">
                     <img src="../assets/image/stackoverflow.png" class="img-logo" />
                 </a>
+                ádasdasd
             </div>
         </div>
     </div>

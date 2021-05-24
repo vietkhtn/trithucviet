@@ -1,8 +1,8 @@
 <?php
 
-require '../core/load.php';
-require '../messages/message.php';
-require '../connect/DB.php';
+require_once '../core/load.php';
+require_once '../messages/message.php';
+require_once '../connect/DB.php';
 
 if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
     $emailOrMobile = $_POST['in-email-mobile'];
@@ -21,11 +21,11 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                     $tstrong = true;
                     $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
                     $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
-    
+                    $userLink = $loadFromUser->userLinkByUserId($user_id);
                     // Set user cookie
                     setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
-                    // redirect to homepage
-                    header('Location: profile.php>');
+                    // redirect to user page
+                    header("Location: ../template/layout-user-login.php?username=$userLink");
                 }else{ // Wrong password
                     $error = MESSAGE::wrongPassword;
                 }
@@ -44,10 +44,11 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                 $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
                 $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
 
+                $userLink = $loadFromUser->userLinkByUserId($user_id);
                 // Set user cookie
                 setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
-                // redirect to homepage
-                header('Location: profile.php');
+                // redirect to user page
+                header("Location: ../template/layout-user-login.php?username=$userLink");
             }else{ // Wrong password
                 $error = MESSAGE::wrongPassword;
             }

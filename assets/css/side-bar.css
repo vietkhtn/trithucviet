@@ -1,0 +1,39 @@
+.side-bar-nav {
+    display: flex;
+    padding: 10px;
+    margin-right: 10px;
+    top: 45px;
+    bottom: 45px;
+    background-color: white;
+    border-right: 1px solid lightgrey;
+    height: 100vh;
+}
+
+img.side-bar-logo {
+    width: 15%;
+}
+
+.side-bar-wrap {
+    margin-left: 40px;
+}
+
+.public-wrap {
+    border-top: 1px solid lightgray;
+}
+
+.home-wrap, .question-wrap, .tags-wrap, .users-wrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.side-bar-text{
+    padding: 10px;
+    color: #847c7c;
+    font-weight: 550;
+    font-size: 13px;
+}
+
+.public-wrap-child {
+    margin-left: 14px;
+}
