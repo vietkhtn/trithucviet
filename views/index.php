@@ -12,20 +12,20 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container" style="margin-left: 1.8rem;margin-right: 1.8rem;max-width: 1370px">
+        <div class="row" style="position: fixed;display: inline;width: 86rem;">
             <!--======================== navbar====================================================================== -->
             <?php include './partials/navbar.php'; ?>
             <!--======================== navbar END====================================================================== -->
         </div>
         <div class="row">
-            <div class="col-md-2" style="padding: 0rem;">
+            <div class="col-md-2" style="padding: 0rem;position: fixed;padding-top: 60px;width: fit-content;">
                 <!--======================== sidebar====================================================================== -->
                 <?php include 'partials/sidebar.php'; ?>
                 <!--======================== sidebar END====================================================================== -->
             </div>
-
-            <div class="col-md-10" style="border-left-style: groove;border-left-color: #D6D9DC;padding-left: 18px;">
+            <div class="col-md-2" style="border-right-style: groove;"></div>
+            <div class="col-md-10" style="padding-top: 56px;">
                 <div class="row" style="height: 90px; align-items: center;">
                     <div class="col-md-10">
                         <h2 style="font-weight: 400;">All Questions</h2>
@@ -41,7 +41,7 @@
                     <div class="col-md-5">
                         <div style="font-family: cursive; font-size: 24px;">342 questions with bounties</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="text-align: right;">
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-outline-secondary">Newest</button>
                             <button type="button" class="btn btn-outline-secondary">Active</button>
@@ -75,6 +75,69 @@
 
                 </div>
 
+                <p>This sidebar is of full height (100%) and always shown.</p>
+                <p>Scroll down the page to see the result.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>
+                    maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id
+                    agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no
+                    quo,<br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,
+                    <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his
+                    ad. Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>This sidebar is of full height (100%) and always shown.</p>
+                <p>Scroll down the page to see the result.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>
+                    maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id
+                    agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no
+                    quo,<br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,
+                    <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his
+                    ad. Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>This sidebar is of full height (100%) and always shown.</p>
+                <p>Scroll down the page to see the result.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>
+                    maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id
+                    agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no
+                    quo,<br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,
+                    <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his
+                    ad. Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
                 <p>This sidebar is of full height (100%) and always shown.</p>
                 <p>Scroll down the page to see the result.</p>
                 <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>

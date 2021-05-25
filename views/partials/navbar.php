@@ -7,17 +7,17 @@
              </a>
          </div>
          <div class="col-md-1">
-             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 78px;">
+             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 78px; background: border-box;">
                  About
              </button>
          </div>
          <div class="col-md-1">
-             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 85px;">
+             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 85px; background: border-box;">
                  Products
              </button>
          </div>
          <div class="col-md-1" style="padding-right: 8.4rem;">
-             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 100px;">
+             <button style="/* background-color: lightslategray; */border: none;color: dimgray;padding: 11px;text-align: center;/* text-decoration: none; */display: inline-block;font-size: 14px;margin: 1px px;border-radius: 34px;font-weight: 700;width: 100px;background: border-box;">
                  For Teams
              </button>
          </div>
@@ -28,10 +28,10 @@
                      <span class="material-icons">search</span></button>
              </form>
          </div>
-         <div class="col-md-auto" style="padding-left: 2rem;">
+         <div class="col-md-auto" style="padding-left:4.3rem;">
              <button type="button" class="btn btn-outline-primary" style="background-color: #DEECF6;">Log in</button>
          </div>
-         <div class="col-md-auto" style="padding-left: 0.2rem;">
+         <div class="col-md-auto" style="padding-left: 0.3rem;">
              <button type="button" class="btn btn-primary" style="background-color: #52A3DC;">Sign up</button>
          </div>
      </div>
