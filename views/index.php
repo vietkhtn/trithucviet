@@ -32,44 +32,70 @@
                     </div>
                     <div class="col-md-2" style="text-align: end;">
                         <div class="col-md-auto" style="padding-left: 0.2rem;">
-                            <button type="button" class="btn btn-primary" style="background-color: #52A3DC;">Ask Question</button>
+                            <button type="button" class="btn btn-primary" style="background-color: #52A3DC;">Ask
+                                Question</button>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div style="font-family: cursive; font-size: large;">342 questions with bounties</div>
+                <div class="row" style="border-bottom-style: groove;padding-bottom: 10px;">
+                    <div class="col-md-5">
+                        <div style="font-family: cursive; font-size: 24px;">342 questions with bounties</div>
                     </div>
                     <div class="col-md-6">
-                        <nav class="navbar navbar-light" style="    padding: 0rem;border-left-style: groove;border-right: groove;border-top: groove;border-bottom: groove;">
-                            <div class="col-md-2">
-                                <span>Newest</span>
-                            </div>
-                            <div class="col-md-2">
-                                <span>Active</span>
-                            </div>
-                            <div class="col-md-3">
-                                <span>Bountied</span>
-                            </div>
-                            <div class="col-md-3">
-                                <span>Unanswered</span>
-                            </div>
-                            <div class="col-md-2">
-                                <span>More</span>
-                            </div>
-                        </nav>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-secondary">Newest</button>
+                            <button type="button" class="btn btn-outline-secondary">Active</button>
+                            <button type="button" class="btn btn-outline-secondary" style="display: inline;">Bountied
+                                <div class="badge bg-primary text-wrap"
+                                    style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;">
+                                    349
+                                </div>
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">Unanswered</button>
+                            <button id="btnGroupDrop1" type="button" class="btn  btn-outline-secondary dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                More
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                <li><a class="dropdown-item" href="#">Frequent</a></li>
+                                <li><a class="dropdown-item" href="#">Votes</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        Fiter
+                    <div class="col-md-1">
+
+                        <button type="button" class="btn btn-outline-secondary"
+                            style="background-color: #DDEBF5;color: cornflowerblue; height: 40px; width:84px">
+                            <span class="material-icons" style="font-size: 18px;">
+                                settings
+                            </span>
+                            Filter
+                        </button>
                     </div>
+
                 </div>
 
                 <p>This sidebar is of full height (100%) and always shown.</p>
                 <p>Scroll down the page to see the result.</p>
-                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br> maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo, <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br> id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo, <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br> id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>
+                    maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te, <br>id
+                    agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.</p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no
+                    quo,<br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,
+                    <br>id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his
+                    ad. Eum no molestiae voluptatibus.
+                </p>
+                <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,
+                    <br>maluisset concludaturque et eum, <br>altera fabulas ut quo. Atqui causae gloriatur ius te,<br>
+                    id agam omnis evertitur eum. Affert laboramus repudiandae nec et. <br>Inciderint efficiantur his ad.
+                    Eum no molestiae voluptatibus.
+                </p>
             </div>
 
         </div>
