@@ -76,17 +76,21 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-1" style="text-align: center;">
+                    <div class="col-md-1" style="text-align: center;font-family: cursive;">
                         <div >
                             <div class="col-md-row">1</div>
-                            <div class="col-md-row">vote</div>
+                            <div class="col-md-row" style="padding-bottom: 6px;">votes</div>
                         </div>
 
                         <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;">
                             <div class="col-md-row">2</div>
                             <div class="col-md-row">answers</div>
                         </div>
-                        <div class="col-md-row">702 views</div>
+                        <!-- <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;color: white;font-weight: 600;background-color: #5EBA7D;">
+                            <div class="col-md-row">2</div>
+                            <div class="col-md-row">answers</div>
+                        </div> -->
+                        <div class="col-md-row" style="padding-top: 10px;">702 views</div>
                     </div>
                 </div>
 
