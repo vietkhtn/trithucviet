@@ -1,20 +1,23 @@
 <?php for($i = 0; $i< 10; $i++){?>
-<div class="row" style="padding-bottom: 2rem;padding-top: 0.9rem;">
+<div class="row" style="padding-bottom: 2rem;padding-top: 0.9rem; border-bottom-style: inset;border-width: 1px;">
     <div class="col-md-1" style="text-align: center;font-family: cursive;">
         <div>
             <div class="col-md-row">1</div>
             <div class="col-md-row" style="padding-bottom: 6px;">votes</div>
         </div>
-
-        <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;">
-            <div class="col-md-row">2</div>
+        <?php if($i%5 == 0){?>
+        <div
+            style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;color: white;font-weight: 600;background-color: #5EBA7D;">
+            <div class="col-md-row"><?php echo($i)?></div>
             <div class="col-md-row">answers</div>
         </div>
-        <!-- <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;color: white;font-weight: 600;background-color: #5EBA7D;">
-                            <div class="col-md-row">2</div>
-                            <div class="col-md-row">answers</div>
-                        </div> -->
-        <div class="col-md-row" style="padding-top: 10px;">702 views</div>
+        <?php }else{ ?>
+        <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;">
+            <div class="col-md-row"><?php echo($i)?></div>
+            <div class="col-md-row">answers</div>
+        </div>
+        <?php }?>
+        <div class="col-md-row" style="padding-top: 10px;"><?php echo($i*100+2)?> views</div>
     </div>
     <div class="col-md-11">
         <div class="row">

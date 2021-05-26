@@ -24,12 +24,12 @@
                 <?php include 'partials/sidebar.php'; ?>
                 <!--======================== sidebar END====================================================================== -->
             </div>
-            <div class="col-md-2" style="border-right-style: groove;"></div>
+            <div class="col-md-2" style="border-right-style: inset;border-width: 2px;"></div>
             <div class="col-md-10" style="padding-top: 56px;">
                 <?php include 'partials/headContent.php'; ?>
              
                 <?php include 'partials/post.php'; ?>
-                
+
             </div>
 
         </div>
