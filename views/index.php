@@ -75,6 +75,21 @@
 
                 </div>
 
+                <div class="row">
+                    <div class="col-md-1" style="text-align: center;">
+                        <div >
+                            <div class="col-md-row">1</div>
+                            <div class="col-md-row">vote</div>
+                        </div>
+
+                        <div style="border-color: #5EBA7D;border-style: solid;border-radius: 5px;border-width: 1.8px;">
+                            <div class="col-md-row">2</div>
+                            <div class="col-md-row">answers</div>
+                        </div>
+                        <div class="col-md-row">702 views</div>
+                    </div>
+                </div>
+
                 <p>This sidebar is of full height (100%) and always shown.</p>
                 <p>Scroll down the page to see the result.</p>
                 <p>Some text to enable scrolling.. <br>Lorem ipsum dolor sit amet, illum definitiones no quo,<br>
