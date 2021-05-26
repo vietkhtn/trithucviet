@@ -75,7 +75,7 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding-bottom: 2rem;padding-top: 0.9rem;">
                     <div class="col-md-1" style="text-align: center;font-family: cursive;">
                         <div>
                             <div class="col-md-row">1</div>
@@ -93,9 +93,18 @@
                         <div class="col-md-row" style="padding-top: 10px;">702 views</div>
                     </div>
                     <div class="col-md-11">
-                        <div class="badge bg-primary text-wrap"
-                            style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;">
-                            349
+                        <div class="row">
+                            <div class="badge bg-primary text-wrap"
+                                style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;font-weight: 500;margin-top: 7px;">
+                                +50
+                            </div>
+                            <div class="col-md-auto"><a href="" style="text-decoration: none;font-size: 22px;">How to open Youtube in android ?</a></div>
+                        </div>
+                        <div class="row" style="font-size: 16px;">
+                        I'm running the latest version of Selenium WebDriver with Geckodriver. I want to prevent Selenium from creating temporary Firefox Profiles in the temporary files directory when launching a new ...
+                        </div>
+                        <div class="row">
+                        
                         </div>
                     </div>
                 </div>
