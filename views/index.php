@@ -35,7 +35,7 @@
         </div>
 
     </div>
-    <?php include 'partials/footer.php'; ?>
+    <?php include 'partials/footer.php';?>
     <script src="../assets/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="../assets/bootstrap/js/popper.js"></script>
     <script src="../assets/bootstrap/js/sidebars.js"></script>
