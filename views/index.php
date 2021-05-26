@@ -77,7 +77,7 @@
 
                 <div class="row">
                     <div class="col-md-1" style="text-align: center;font-family: cursive;">
-                        <div >
+                        <div>
                             <div class="col-md-row">1</div>
                             <div class="col-md-row" style="padding-bottom: 6px;">votes</div>
                         </div>
@@ -91,6 +91,12 @@
                             <div class="col-md-row">answers</div>
                         </div> -->
                         <div class="col-md-row" style="padding-top: 10px;">702 views</div>
+                    </div>
+                    <div class="col-md-11">
+                        <div class="badge bg-primary text-wrap"
+                            style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;">
+                            349
+                        </div>
                     </div>
                 </div>
 
