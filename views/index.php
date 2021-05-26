@@ -101,18 +101,40 @@
                             <div class="col-md-auto"><a href="" style="text-decoration: none;font-size: 22px;">How to
                                     open Youtube in android ?</a></div>
                         </div>
-                        <div class="row" style="font-size: 16px;">
+                        <div class="row" style="font-size: 16px;padding-bottom: 16px;padding-top: 2px;">
                             I'm running the latest version of Selenium WebDriver with Geckodriver. I want to prevent
                             Selenium from creating temporary Firefox Profiles in the temporary files directory when
                             launching a new ...
                         </div>
                         <div class="row">
-                            <div class="col-md-auto">
-                                <div class="badge bg-primary text-wrap">Java</div>
+                            <div class="col-md-auto" style="padding-left: 0;padding-right: 0.4rem;">
+                                <div
+                                    style="flex-wrap: wrap;display: flex;background-color: #D1E5F1;font-family: cursive;font-size: 16px;padding-left: 7px;padding-right: 8px;padding-top: 2px;padding-bottom: 3px;border-radius: 7px;">
+                                    <span class="material-icons material-icons-outlined">
+                                        sell
+                                    </span>Tags
+                                </div>
                             </div>
-                            <div class="col-md-auto">
-                                <div class="badge bg-primary text-wrap">Android</div>
+                            <div class="col-md-auto" style="padding-left: 0;padding-right: 0.4rem;">
+                                <div
+                                    style="flex-wrap: wrap;display: flex;background-color: #D1E5F1;font-family: cursive;font-size: 16px;padding-left: 7px;padding-right: 7px;padding-top: 2px;padding-bottom: 3px;border-radius: 7px;">
+                                    Android
+                                </div>
                             </div>
+                            <div class="col-md-auto" style="padding-left: 0;padding-right: 0.4rem;">
+                                <div
+                                    style="flex-wrap: wrap;display: flex;background-color: #D1E5F1;font-family: cursive;font-size: 16px;padding-left: 7px;padding-right: 7px;padding-top: 2px;padding-bottom: 3px;border-radius: 7px;">
+                                    Youtube
+                                </div>
+                            </div>
+                            <div class="col-md-auto" style="padding-left: 0;padding-right: 0.4rem;">
+                                <div
+                                    style="flex-wrap: wrap;display: flex;background-color: #D1E5F1;font-family: cursive;font-size: 16px;padding-left: 7px;padding-right: 7px;padding-top: 2px;padding-bottom: 3px;border-radius: 7px;">
+                                    ios
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                         </div>
                     </div>
                 </div>
