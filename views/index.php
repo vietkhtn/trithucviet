@@ -98,13 +98,21 @@
                                 style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;font-weight: 500;margin-top: 7px;">
                                 +50
                             </div>
-                            <div class="col-md-auto"><a href="" style="text-decoration: none;font-size: 22px;">How to open Youtube in android ?</a></div>
+                            <div class="col-md-auto"><a href="" style="text-decoration: none;font-size: 22px;">How to
+                                    open Youtube in android ?</a></div>
                         </div>
                         <div class="row" style="font-size: 16px;">
-                        I'm running the latest version of Selenium WebDriver with Geckodriver. I want to prevent Selenium from creating temporary Firefox Profiles in the temporary files directory when launching a new ...
+                            I'm running the latest version of Selenium WebDriver with Geckodriver. I want to prevent
+                            Selenium from creating temporary Firefox Profiles in the temporary files directory when
+                            launching a new ...
                         </div>
                         <div class="row">
-                        
+                            <div class="col-md-auto">
+                                <div class="badge bg-primary text-wrap">Java</div>
+                            </div>
+                            <div class="col-md-auto">
+                                <div class="badge bg-primary text-wrap">Android</div>
+                            </div>
                         </div>
                     </div>
                 </div>
