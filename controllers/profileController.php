@@ -3,6 +3,8 @@
 require_once '../connect/login.php';
 require_once '../core/load.php';
 
+session_start();
+
 if (login::isLoggedIn()){
     $user_id = login::isLoggedIn();
 }else {
@@ -12,6 +14,8 @@ if (login::isLoggedIn()){
 
 if (isset($_GET['username']) == true && empty($_GET['username']) == false){
     $username = $loadFromUser->checkInput($_GET['username']);
+
+    $_SESSION['username'] = $username;
 
     $profileId = $loadFromUser->userIdByUsername($username);
 
