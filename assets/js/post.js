@@ -11,8 +11,8 @@ $(function() {
         }
     })
 
-    // Set font-size questionText 
-    $('#questionText').contents().find('body').css('font-size','12px');
+    // Set font-size postText 
+    $('#postText').contents().find('body').css('font-size','13px');
 
     // Wrap tag when spacebar
     var tagInput = document.getElementById('questionTags');
@@ -61,7 +61,7 @@ $(function() {
      
      // Edit Question function
      const editTextButtons = document.querySelectorAll('button.edit-content-button-css');
-     questionText.document.designMode = "On";
+     postText.document.designMode = "On";
      let showCode = false;
      for( let i = 0; i< editTextButtons.length; i++) {
          editTextButtons[i].addEventListener('click', () => {
@@ -83,8 +83,8 @@ $(function() {
                              body: formData
                          }).then(data => data.json()).then(data =>{
                              if (data != null) {
-                                 questionText.document.execCommand(cmd, false, data.data.url); // render image from API
-                                 const images = questionText.document.querySelectorAll('img');
+                                postText.document.execCommand(cmd, false, data.data.url); // render image from API
+                                 const images = postText.document.querySelectorAll('img');
                                  images.forEach(item =>{
                                      item.style.maxWidth = "400px";
                                      item.style.maxHeight = "400px";
@@ -96,21 +96,21 @@ $(function() {
              // Open link upload link
              else if(cmd === "createLink"){
                  let url = prompt('Enter link here: ', '');
-                 questionText.document.execCommand(cmd, false, url);
-                 const links = questionText.document.querySelectorAll('a');
+                 postText.document.execCommand(cmd, false, url);
+                 const links = postText.document.querySelectorAll('a');
                  links.forEach(item =>{
                      item.target = "_blank";
                      item.addEventListener('mouseover', ()=> {
-                         questionText.document.designMode = "Off";
+                        postText.document.designMode = "Off";
                      })
                      item.addEventListener('mouseout', ()=> {
-                         questionText.document.designMode = "On";
+                        postText.document.designMode = "On";
                      })
                  })
              }
              // Show code 
              else if(cmd === "showCode") {
-                 const textBody = questionText.document.querySelector('body');
+                 const textBody = postText.document.querySelector('body');
                  if(showCode){
                      textBody.innerHTML = textBody.textContent;
                      showCode = false;
@@ -120,7 +120,7 @@ $(function() {
                  }
              }
              else{
-                 questionText.document.execCommand(cmd, false, null);
+                postText.document.execCommand(cmd, false, null);
              }
          })
      }
@@ -129,19 +129,18 @@ $(function() {
     $('.ask-button').on('click', function(){
         var title = document.getElementById('questionTitle').value;
         var listTag = document.getElementsByClassName('tag-name-wrapper');
-        var iframe = document.getElementById('questionText');
+        var iframe = document.getElementById('postText');
         var content = iframe.contentWindow.document.body.innerHTML;
         var contentText = iframe.contentWindow.document.body.innerText;
         var tags = new Array();
         for (var i = 0; i < listTag.length; i++) {
             tags.push(listTag[i].innerText);
         }
-        //Call API check Bad Word in content
+        // Call API check Bad Word in content
         // If content contains words -> check words in content
-
         if(contentText != ""){
             $.ajax({
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + contentText,
+                url: 'http://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
                 type: 'GET',
                 headers: {
                     "accept": "application/json",
@@ -152,7 +151,6 @@ $(function() {
                     if (data.is_bad == true){
                         alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
                     } 
-    
                     // else if content is good -> store in db
                     else {
                         var formData = new FormData();
@@ -160,6 +158,17 @@ $(function() {
                         formData.append('questionTags', tags);
                         formData.append('questionContent', content);
                         formData.append('userId', userId);
+                        $.ajax({
+                            url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            type: 'post',
+                            success: function(){
+                                location.reload();
+                            }
+                        })
                     }
                 },
                 error: function(){

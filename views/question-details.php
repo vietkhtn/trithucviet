@@ -8,11 +8,11 @@ require_once '../controllers/questionDetailController.php'
     let userId = '<?php echo $user_id?>';
     // Auto adjust iframe height depend on content typing
     function resizeFrameHeight() {
-        document.getElementById('questionText').contentWindow.document.designMode = "on";       
-        document.getElementById('questionText').contentWindow.document.onkeyup = function(event) {
-            var frm = document.getElementById('questionText');
+        document.getElementById('postText').contentWindow.document.designMode = "on";       
+        document.getElementById('postText').contentWindow.document.onkeyup = function(event) {
+            var frm = document.getElementById('postText');
             frm.style.overflow = 'hidden';
-            frm.style.height = questionText.document.body.scrollHeight + 'px';
+            frm.style.height = postText.document.body.scrollHeight + 'px';
         }    
     }  
 </script>
@@ -66,7 +66,7 @@ require_once '../controllers/questionDetailController.php'
                 </div>
             </div>
             <!-- List Answer -->
-
+                <?php $loadFromAnswer->listAllAnswersByQuestionId($questionData->question_id); ?>
             <!-- Your answers -->
             <div class="your-answer-title">Your Answer</div>
             <div class="your-answer-wrap">
@@ -111,7 +111,7 @@ require_once '../controllers/questionDetailController.php'
                         <i class="fas fa-code"></i>
                         </button>
                     </form>
-                <iframe name="answerText" id="answerText" class="answer align-middle" onload="resizeFrameHeight()"></iframe>
+                <iframe name="postText" id="postText" class="answer align-middle" onload="resizeFrameHeight()"></iframe>
                 <!-- Post your answer button -->
                 <div class="answer-button-wrap">
                     <div class="answer-button">Post your answer</div>

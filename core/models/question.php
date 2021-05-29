@@ -90,9 +90,6 @@ class Question extends User {
                                 </div>
                             </div>                       
                         </div>
-                        <div class="news-feed-photo">
-                        
-                        </div>
                     </div>
                 </div>
 
