@@ -6,7 +6,8 @@ class Question extends User {
     }
 
     public function questionData($questionId) {
-        $statement = $this->pdo->prepare('SELECT * FROM question WHERE question_id = :question_id');
+        $statement = $this->pdo->prepare('SELECT * FROM question LEFT JOIN `profile` ON question.user_id = profile.user_id
+                                            WHERE question_id = :question_id');
         $statement->bindParam(':question_id', $questionId, PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetch(PDO::FETCH_OBJ);
@@ -128,5 +129,28 @@ class Question extends User {
         }
     }
 
+    public function updateQuestionData($table, $questionId, $fields = array()) {
+        $columns = '';
+        $i = 1;
+
+        foreach ($fields as $name => $value){
+            $columns .= "{$name} = :{$name}"; //coverPic = :coverPic
+            // if mutiple field update, add comma between columns
+            if($i < count($fields)){
+                $columns .= ',';
+            }
+            $i++;
+        }
+        // Update Query
+        $sql = "UPDATE {$table} SET {$columns} WHERE question_id = {$questionId}";
+
+        // Binding value to sql query
+        if($statement = $this->pdo->prepare($sql)){
+            foreach ($fields as $key =>$value){
+                $statement->bindValue(':'.$key, $value);
+            }
+        }
+        $statement->execute();
+    }
 }
 ?>

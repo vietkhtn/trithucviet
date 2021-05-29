@@ -16,12 +16,15 @@
     <link rel="stylesheet" href="../assets/css/top-bar.css">
     <link rel="stylesheet" href="../assets/css/side-bar.css">
     <link rel="stylesheet" href="../assets/css/question-details.css">
+    <link rel="stylesheet" href="../assets/css/user-info-card.css">
     <link rel="stylesheet" href="../assets/css/create-post.css">
     <link rel="stylesheet" href="../assets/css/post-timeline.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="..\assets\js\jquery.js"></script>
     <script src="..\assets\js\profile.js"></script>
-    <script src="..\assets\js\post.js"></script>
+    <script src="..\assets\js\postAnswer.js"></script>
+    <script src="..\assets\js\editPostArea.js"></script>
+
     <?php if(isset($profileId)) {
         if($profileId == $user_id) {
     ?>

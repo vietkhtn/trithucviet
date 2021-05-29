@@ -38,6 +38,7 @@
 }
 
 .question-content-container {
+    position: relative;
     display: flex;
     border-bottom: 1px solid lightgrey;
 }
@@ -76,10 +77,15 @@
 
 /* Question Content */
 .question-content {
-    position: relative;
     padding: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
+
+/* User Asked */
+.user-asked-wrap {
+    margin-top: 20px;
+}
+
 
 /* List Tag */
 .list-tag-wrap {
