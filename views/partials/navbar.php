@@ -2,7 +2,7 @@
  <nav class="navbar navbar-light bg-light" style="padding: 0rem;">
      <div class="container-fluid" style="justify-content: flex-start; padding-right: 0rem;padding-left: 0rem;">
          <div class="col-md-auto">
-             <a class="navbar-brand" href="#">
+             <a class="navbar-brand" href="/">
                  <img src="../assets/image/stackoverflow.png" width="200" height="" class="d-inline-block align-top" alt="">
              </a>
          </div>

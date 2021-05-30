@@ -2,9 +2,10 @@
 
     <ul class="list-unstyled ps-0">
         <li class="mb-1">
+        <a href="index.php" style="text-decoration: none">
             <button class="btn btn-toggle align-items-center rounded collapsed">
-                HOME
-            </button>
+            HOME
+            </button></a>
         </li>
         <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded collapsed">
@@ -12,9 +13,9 @@
             </button>
             <div>
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark rounded">Questions</a></li>
+                    <li><a href="index.php" class="link-dark rounded">Questions</a></li>
                     <li><a href="#" class="link-dark rounded">Tags</a></li>
-                    <li><a href="#" class="link-dark rounded">User</a></li>
+                    <li><a href="user_page.php" class="link-dark rounded">User</a></li>
                 </ul>
             </div>
         </li>

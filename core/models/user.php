@@ -60,6 +60,29 @@ class User extends Base{
         $statement->execute();
         return $statement->fetch(PDO::FETCH_OBJ);
     }
+
+    //trung
+    public function getAllUser() {
+        $statement = $this->pdo->prepare(
+            'SELECT users.user_id, users.first_name, users.last_name, profile.religion, profile.profilePic,count(question.question_id) AS countQuestion, group_concat(question.tags) AS tags
+            FROM users, profile, question
+            WHERE users.user_id = profile.user_id and question.user_id = users.user_id
+            GROUP BY users.user_id ');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get1UserByName($username) {
+        $text = "%$username%";
+        $statement = $this->pdo->prepare(
+            'SELECT users.user_id, users.first_name, users.last_name,profile.religion, profile.profilePic,count(question.question_id) AS countQuestion , group_concat(question.tags) AS tags
+            FROM users, profile, question
+            WHERE (users.first_name LIKE :searchText OR users.last_name LIKE :searchText)  AND users.user_id = profile.user_id and question.user_id = users.user_id 
+            GROUP BY users.user_id');
+        $statement->bindParam(':searchText',$text, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
 }
 
 ?>

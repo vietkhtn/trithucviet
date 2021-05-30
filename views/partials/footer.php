@@ -1,4 +1,4 @@
-<div class="row" style="background-color: #242729;padding-top: 20px;padding-bottom: 100px">
+<div class="row" style="background-color: #242729;padding-top: 20px;padding-bottom: 100px;width: -webkit-fill-available;position: unset;bottom: 0;">
     <div class="col-md-1">
         <img src="../assets/image/intro.png" alt="">
     </div>

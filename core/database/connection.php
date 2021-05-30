@@ -1,7 +1,7 @@
 <?php 
- $hostInfo = 'mysql:host=bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com;dbname=bitgqltbcw1nl6jid2u2;charset=utf8mb4';
- $userAdmin = 'uboe6mrf9gqq6mvo';
- $passAdmin = 'LZ55sk6B8o7IjVP5DyYM';
+ $hostInfo = 'mysql:host=bjhmz1rb32kuq60eo0v4-mysql.services.clever-cloud.com;dbname=bjhmz1rb32kuq60eo0v4;charset=utf8mb4';
+ $userAdmin = 'uwajkb81wg9v9z6b';
+ $passAdmin = 'mp42r1Xetr3wuumJVeCj';
 try {
     $pdo = new PDO($hostInfo, $userAdmin, $passAdmin);
     //echo "Connected successfully";

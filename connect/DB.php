@@ -1,13 +1,13 @@
 <?php 
 class DB {
 
-    public $DB_NAME="bitgqltbcw1nl6jid2u2";
-    public $HOST="bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com";
-    public $USER="uboe6mrf9gqq6mvo";
-    public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
+    public $DB_NAME="bjhmz1rb32kuq60eo0v4";
+    public $HOST="bjhmz1rb32kuq60eo0v4-mysql.services.clever-cloud.com";
+    public $USER="uwajkb81wg9v9z6b";
+    public $PASSWORD="mp42r1Xetr3wuumJVeCj";
 
     private static function connnect() {
-        $pdo = new PDO('mysql:host=bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com;port=3306;dbname=bitgqltbcw1nl6jid2u2;charset=utf8mb4', 'uboe6mrf9gqq6mvo', 'LZ55sk6B8o7IjVP5DyYM');
+        $pdo = new PDO("mysql:host=$HOST;port=3306;dbname=$DB_NAME;charset=utf8mb4', '$USER', '$PASSWORD'");
         // Report error and exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

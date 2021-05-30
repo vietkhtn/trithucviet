@@ -11,7 +11,7 @@
                 </div>
                 <div class="row" style="border-bottom-style: groove;padding-bottom: 10px;border-width: 1px;">
                     <div class="col-md-5">
-                        <div style="font-family: cursive; font-size: 24px;">342 questions with bounties</div>
+                        <div style="font-family: cursive; font-size: 24px;"><?php echo($countQuestion['count'])?> questions with bounties</div>
                     </div>
                     <div class="col-md-6" style="text-align: right;">
                         <div class="btn-group" role="group">

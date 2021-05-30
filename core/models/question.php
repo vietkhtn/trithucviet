@@ -131,5 +131,32 @@ class Question extends User {
         }
     }
 
+
+    
+    //trung
+    public function getAllQuestionAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id
+        ORDER BY question.postOn'); // Get lasted question posts
+        $statement->execute();
+
+        $questions = $statement->fetchAll(PDO::FETCH_OBJ);
+
+        return $questions;
+    }
+
+    public function getCountQuestions() {
+        $statement = $this->pdo->prepare(
+        'SELECT count(*) AS `count`
+        FROM question'); // Get lasted question posts
+        $statement->execute();
+
+        $countQuestion = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $countQuestion;
+    }
+
 }
 ?>
