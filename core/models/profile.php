@@ -1,6 +1,4 @@
 <?php 
-// include 'Base.php';
-
 class Profile extends Base{
     protected $pdo;
 

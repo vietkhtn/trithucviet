@@ -1,7 +1,4 @@
 <?php 
-
-include 'var.php';
-
 class DB {
 
     public $DB_NAME="bitgqltbcw1nl6jid2u2";
@@ -10,7 +7,7 @@ class DB {
     public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
 
     private static function connnect() {
-        $pdo = new PDO("mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4", 'root','');
+        $pdo = new PDO("mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4", 'root','Phamvantrinh99');
 
         // Report error and exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

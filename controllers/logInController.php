@@ -1,8 +1,8 @@
 <?php
 
-require '../core/load.php';
-require '../messages/message.php';
-require '../connect/DB.php';
+require_once '../core/load.php';
+require_once '../messages/message.php';
+require_once '../connect/DB.php';
 
 if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
     $emailOrMobile = $_POST['in-email-mobile'];
@@ -25,8 +25,7 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                     // Set user cookie
                     setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
                     // redirect to user page
-                    $VIEW = require("../views/profile.php");
-                    header ("Location: ../template/master-layout.php?username=$userLink");
+                    header("Location: ../template/layout-user-login.php?username=$userLink");
                 }else{ // Wrong password
                     $error = MESSAGE::wrongPassword;
                 }
@@ -49,8 +48,7 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
                 // Set user cookie
                 setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
                 // redirect to user page
-                $VIEW = "../views/profile.php";
-                header ("Location: ../template/master-layout.php?username=$userLink");
+                header("Location: ../template/layout-user-login.php?username=$userLink");
             }else{ // Wrong password
                 $error = MESSAGE::wrongPassword;
             }

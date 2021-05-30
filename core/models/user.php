@@ -1,5 +1,4 @@
 <?php 
-include 'Base.php';
 
 class User extends Base{
     protected $pdo;
@@ -62,16 +61,9 @@ class User extends Base{
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function timeAgo($datetime){
-        $time = strtotime($datetime);
-        $current = time();
-        $seconds = $current - $time;
-        $minutes = round($seconds / 60); 
-        $hours = round($seconds / 3600);
-        // $days = round($seconds / 3600*24);
-        // $weeks = round($seconds /3600*24*7);
-        $months = round($seconds /2600640);
-        // $years = round($seconds /3600*24*365);
+    public function updateUserData($table, $userId, $fields = array()) {
+        $columns = '';
+        $i = 1;
 
         if ($seconds <= 60){
             if($seconds == 0){

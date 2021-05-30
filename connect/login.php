@@ -1,9 +1,9 @@
 <?php
 
-include 'DB.php';
+require_once 'DB.php';
 
 class login {
-    // Check Cookie if user already logged include
+    // Check Cookie if user already logged require_once
     public static function isLoggedIn() {
         if (isset($_COOKIE['FBID'])){
             // Check token user in user-token

@@ -22,29 +22,34 @@ Class Base{
         }
     }
 
-    public function update($table, $userId, $fields = array()) {
-        $columns = '';
-        $i = 1;
 
-        foreach ($fields as $name => $value){
-            $columns .= "{$name} = :{$name}"; //coverPic = :coverPic
-            // if mutiple field update, add comma between columns
-            if($i < count($fields)){
-                $columns .= ',';
-            }
-            $i++;
-        }
-        // Update Query
-        $sql = "UPDATE {$table} SET {$columns} WHERE user_id = {$userId}";
+    public function timeAgo($datetime){
+        $time = strtotime($datetime);
+        $current = time();
+        $seconds = $current - $time;
+        $minutes = round($seconds / 60); 
+        $hours = round($seconds / 3600);
+        // $days = round($seconds / 3600*24);
+        // $weeks = round($seconds /3600*24*7);
+        $months = round($seconds /2600640);
+        // $years = round($seconds /3600*24*365);
 
-        // Binding value to sql query
-        if($statement = $this->pdo->prepare($sql)){
-            foreach ($fields as $key =>$value){
-                $statement->bindValue(':'.$key, $value);
+        if ($seconds <= 60){
+            if($seconds == 0){
+                return 'posted now';
+            }else{
+                return ''.$seconds.' seconds ago';
             }
+        }else if($minutes <= 60){
+            return ''.$minutes.' minutes ago';
+        }else if($hours <= 24){
+            return ''.$hours.' hours ago';
+        }else if ($months <= 24){
+            return ''.date('M j', $time);
+        }else{
+            return ''.date('j M Y', $time);
         }
-        $statement->execute();
+           
     }
 }
-
 ?>

@@ -2,7 +2,7 @@
 
 $hostInfo = 'mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4';
 $userAdmin = 'root';
-$passAdmin = '';
+$passAdmin = 'Phamvantrinh99';
 
 try {
     $pdo = new PDO($hostInfo, $userAdmin, $passAdmin);

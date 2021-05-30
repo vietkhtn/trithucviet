@@ -1,7 +1,7 @@
 <?php 
 
-include '../load.php';
-include '../../connect/login.php';
+require_once '../load.php';
+require_once '../../connect/login.php';
 
 $user_id = login::isLoggedIn();
 
@@ -10,7 +10,7 @@ if (isset($_POST['imageUrl'])){
     $imageUrl = $loadFromUser->checkInput($_POST['imageUrl']);
     $user_id = $loadFromUser->checkInput($_POST['userId']);
     
-    $loadFromUser->update('profile', $user_id, array('profilePic' => $imageUrl));
+    $loadFromUser->updateUserData('profile', $user_id, array('profilePic' => $imageUrl));
 
 }else{
 
