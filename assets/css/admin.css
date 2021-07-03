@@ -263,7 +263,9 @@
     }
 
  .sidebar-nav ul .sidebar-item .sidebar-link.active{
-     font-weight:500;border-left:3px solid #41b3f9
+     font-weight:700;
+     border-left:3px solid #41b3f9;
+     background:rgba(0,0,0,0.07)
     }
 
 .sidebar-nav ul{
