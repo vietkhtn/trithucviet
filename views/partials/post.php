@@ -76,7 +76,6 @@
 </div>
 
 <?php } ?>
-?>
 <script>
   questionContents = document.querySelectorAll("#content");
     questionContents.forEach(item => {
