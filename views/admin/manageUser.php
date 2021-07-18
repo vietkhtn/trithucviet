@@ -24,7 +24,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Basic Table</h4>
+                        <h4 class="page-title">Manage User</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -52,9 +52,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Basic Table</h3>
+                            <h3 class="box-title">Manage User</h3>
                             <div class="table-responsive">
-                                <table class="table text-nowrap" id="table_id">
+                                <table class="table text-nowrap table-hover" id="table_id">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th class="border-top-0">#</th>
@@ -62,16 +62,23 @@
                                             <th class="border-top-0">Last Name</th>
                                             <th class="border-top-0">Email</th>
                                             <th class="border-top-0">BirthDay</th>
+                                            <th class="border-top-0">Gender</th>
+                                            <th class="border-top-0">Manage</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php forEach ($usersList as $user) { ?>
-                                            <tr>
+                                        <tr>
                                             <td><?php echo($user->user_id) ?></td>
                                             <td><?php echo($user->first_name) ?></td>
                                             <td><?php echo($user->last_name) ?></td>
                                             <td><?php echo($user->email) ?></td>
                                             <td><?php echo($user->birthday) ?></td>
+                                            <td><?php echo($user->gender) ?></td>
+                                            <td>
+                                                <a href="#lock" class="btnLock" data-toggle="modal"><i class="material-icons" title="Lock">lock</i></a>
+                                                <a href="#delete" class="btnDelete" data-toggle="modal"><i class="material-icons" title="Delete">&#xE872;</i></a>
+                                            </td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>

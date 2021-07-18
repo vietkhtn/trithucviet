@@ -1,0 +1,21 @@
+.btnDelete {
+    color: #dc3545;
+}
+
+
+.btnInfo {
+    color: #17a2b8;
+}
+
+
+.btnLock {
+    color: #27c981;
+}
+
+.custom-display {
+    display: inline-block;
+    white-space: nowrap;
+    width: 400px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

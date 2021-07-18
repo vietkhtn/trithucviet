@@ -13,14 +13,14 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-dark sidebar-link tab-manage-user" href=""
+                            <a class="sidebar-link waves-dark sidebar-link tab-manage-user" href="/trithucviet/views/admin/manageuser.php"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu"> User Profile</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link tab-manage-post" href="/trithucviet/views/admin/managepost.php"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
                                 <span class="hide-menu">Manage Posts</span>
