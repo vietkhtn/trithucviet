@@ -69,6 +69,7 @@ $(function() {
                         data: formData,
                         type: 'post',
                         success: function(data1){
+                            console.log(data1);
                             $('.profile-pic-me').attr('src', '' + data1 + '');
                             $('.my-icon-ask').attr('src', '' + data1 + '');
                             $('.user-image-pic').attr('src', '' + data1 + '');

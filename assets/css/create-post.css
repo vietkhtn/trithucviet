@@ -203,7 +203,7 @@ button.edit-content-button-css {
     text-align: center;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    margin: 0 0 10px 5px;
+    margin-left: 5px;
     padding: 5px;
     cursor: pointer;
 }
@@ -216,7 +216,7 @@ button.edit-content-button-css {
     text-align: center;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    margin: 0 0 10px 5px;
+    margin-left: 5px;
     padding: 5px;
     cursor: pointer;
 }

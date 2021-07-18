@@ -20,9 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `stackoverflow`
 --
-DROP DATABASE IF exists `stackoverflow`;
-CREATE DATABASE `stackoverflow`;
-use stackoverflow;
+
 -- --------------------------------------------------------
 
 --

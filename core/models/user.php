@@ -61,26 +61,27 @@ class User extends Base{
         return $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function updateUserData($table, $userId, $fields = array()) {
-        $columns = '';
-        $i = 1;
+    //trung
+    public function getAllUser() {
+        $statement = $this->pdo->prepare(
+            'SELECT users.user_id, users.first_name, users.last_name, profile.religion, profile.profilePic,count(question.question_id) AS countQuestion, group_concat(question.tags) AS tags
+            FROM users, profile, question
+            WHERE users.user_id = profile.user_id and question.user_id = users.user_id
+            GROUP BY users.user_id ');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
 
-        if ($seconds <= 60){
-            if($seconds == 0){
-                return 'posted now';
-            }else{
-                return ''.$seconds.' seconds ago';
-            }
-        }else if($minutes <= 60){
-            return ''.$minutes.' minutes ago';
-        }else if($hours <= 24){
-            return ''.$hours.' hours ago';
-        }else if ($months <= 24){
-            return ''.date('M j', $time);
-        }else{
-            return ''.date('j M Y', $time);
-        }
-           
+    public function get1UserByName($username) {
+        $text = "%$username%";
+        $statement = $this->pdo->prepare(
+            'SELECT users.user_id, users.first_name, users.last_name,profile.religion, profile.profilePic,count(question.question_id) AS countQuestion , group_concat(question.tags) AS tags
+            FROM users, profile, question
+            WHERE (users.first_name LIKE :searchText OR users.last_name LIKE :searchText)  AND users.user_id = profile.user_id and question.user_id = users.user_id 
+            GROUP BY users.user_id');
+        $statement->bindParam(':searchText',$text, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 }
 

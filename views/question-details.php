@@ -5,8 +5,16 @@ require_once '../controllers/questionDetailController.php'
 
 
 <script type="text/javascript">
-    let userId = '<?php echo $questionData->user_id; ?>';
-    let questionId = '<?php echo $questionId?>'
+    let userId = '<?php echo $user_id?>';
+    // Auto adjust iframe height depend on content typing
+    function resizeFrameHeight() {
+        document.getElementById('questionText').contentWindow.document.designMode = "on";       
+        document.getElementById('questionText').contentWindow.document.onkeyup = function(event) {
+            var frm = document.getElementById('questionText');
+            frm.style.overflow = 'hidden';
+            frm.style.height = questionText.document.body.scrollHeight + 'px';
+        }    
+    }  
 </script>
 
 <div class="content-wrap">
@@ -48,50 +56,17 @@ require_once '../controllers/questionDetailController.php'
                             ?>
                         </div>  
                     </div>
-                    <!-- Asked by -->
-                    <div class="user-asked-wrap">
-                        <div class="post-by-container">
-                            <div class="user-info-wrap">
-                                <div class="post-post-on">
-                                    asked <?php echo $questionData->postOn; ?>
-                                </div>
-                                <div class="user-detail-info-wrap">
-                                    <div class="user-info-logo">
-                                        <img src="<?php echo $questionData->profilePic; ?>" class="user-info-profile-pic">
-                                    </div>
-                                    <div class="detail-info-container">
-                                        <div class="user-info-name">
-                                            <?php echo $questionData->firstName.' '.$questionData->lastName; ?>
-                                        </div>
-                                        <div class="achieve-info">
-                                            <div class="total-vote-wrap">
-                                                <img src="../assets/image/dotGrey.png" class="achieve-logo-css">
-                                                <div class="total-amount">12</div>
-                                            </div>
-                                            <div class="total-answer-wrap">
-                                                <img src="../assets/image/dotGreen.png" class="achieve-logo-css">
-                                                <div class="total-amount">23</div>
-                                            </div>
-                                            <div class="total-spam-wrap">
-                                                <img src="../assets/image/dotRed.png" class="achieve-logo-css">
-                                                <div class="total-amount">2</div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- Answers -->
             <div class="answer-count"><?php echo $questionData->answerCount; ?> Answer</div>
             <div class="list-answer-wrap">
                 <div class="list-answer">
-                    <?php $loadFromAnswer->listAllAnswersByQuestionId($questionData->question_id); ?>
+
                 </div>
             </div>
             <!-- List Answer -->
+
             <!-- Your answers -->
             <div class="your-answer-title">Your Answer</div>
             <div class="your-answer-wrap">
@@ -136,7 +111,7 @@ require_once '../controllers/questionDetailController.php'
                         <i class="fas fa-code"></i>
                         </button>
                     </form>
-                <iframe name="postText" id="postText" class="answer align-middle"></iframe>
+                <iframe name="answerText" id="answerText" class="answer align-middle" onload="resizeFrameHeight()"></iframe>
                 <!-- Post your answer button -->
                 <div class="answer-button-wrap">
                     <div class="answer-button">Post your answer</div>

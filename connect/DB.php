@@ -1,14 +1,17 @@
 <?php 
 class DB {
 
-    public $DB_NAME="bitgqltbcw1nl6jid2u2";
-    public $HOST="bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com";
-    public $USER="uboe6mrf9gqq6mvo";
-    public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
+    // public $DB_NAME="bjhmz1rb32kuq60eo0v4";
+    // public $HOST="bjhmz1rb32kuq60eo0v4-mysql.services.clever-cloud.com";
+    // public $USER="uwajkb81wg9v9z6b";
+    // public $PASSWORD="mp42r1Xetr3wuumJVeCj";
+    public $DB_NAME="stackoverflow";
+    public $HOST="127.0.0.1";
+    public $USER="root";
+    public $PASSWORD="Teotu_19";
 
     private static function connnect() {
-        $pdo = new PDO("mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4", 'root','Phamvantrinh99');
-
+        $pdo = new PDO("mysql:host=$HOST;port=3306;dbname=$DB_NAME;charset=utf8mb4', '$USER', '$PASSWORD'");
         // Report error and exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

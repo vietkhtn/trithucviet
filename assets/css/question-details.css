@@ -38,7 +38,6 @@
 }
 
 .question-content-container {
-    position: relative;
     display: flex;
     border-bottom: 1px solid lightgrey;
 }
@@ -77,15 +76,10 @@
 
 /* Question Content */
 .question-content {
+    position: relative;
     padding: 20px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
 }
-
-/* User Asked */
-.user-asked-wrap {
-    margin-top: 20px;
-}
-
 
 /* List Tag */
 .list-tag-wrap {
@@ -180,7 +174,6 @@ img.logo-regulation {
 
 .regulation-child-wrap {
     display: flex;
-    margin: 0 0 10px 0;
 }
 
 .regulation-text{
