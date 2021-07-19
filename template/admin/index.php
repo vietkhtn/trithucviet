@@ -11,5 +11,5 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-   <link href="../../assets/css/admin.css" rel="stylesheet">
-   <link href="../../assets/css/admin_v2.css" rel="stylesheet">
+   <link href="../assets/css/admin.css" rel="stylesheet">
+   <link href="../assets/css/admin_v2.css" rel="stylesheet">

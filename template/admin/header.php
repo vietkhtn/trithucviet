@@ -8,7 +8,7 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img width="170" height="50" src="../../assets/image/stackoverflow.png" alt="homepage" />
+                            <img width="170" height="50" src="../assets/image/stackoverflow.png" alt="homepage" />
                         </b>
 
                     </a>
@@ -42,7 +42,7 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="../../assets/image/varun.jpg" alt="user-img" width="36"
+                                <img src="../assets/image/varun.jpg" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Admin</span></a>
                         </li>
                         <!-- ============================================================== -->

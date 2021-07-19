@@ -1,11 +1,11 @@
-<?php require '../../controllers/adminController.php' ?>
+<?php require '../controllers/adminController.php' ?>
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
     
-<?php require "../../template/admin/index.php" ?>
+<?php include "../template/admin/index.php" ?>
 
 </head>
 
@@ -13,9 +13,9 @@
 
     <div id="main-wrapper" data-layout="vertical" >
 
-    <?php require "../../template/admin/header.php" ?>
+    <?php include "../template/admin/header.php" ?>
 
-    <?php require "../../template/admin/sidebar.php" ?>
+    <?php include "../template/admin/sidebar.php" ?>
 
         <div class="page-wrapper">
             <!-- ============================================================== -->
@@ -63,6 +63,8 @@
                                             <th class="border-top-0">Email</th>
                                             <th class="border-top-0">BirthDay</th>
                                             <th class="border-top-0">Gender</th>
+                                            <th class="border-top-0">Role</th>
+                                            <th class="border-top-0">Status</th>
                                             <th class="border-top-0">Manage</th>
                                         </tr>
                                     </thead>
@@ -75,9 +77,18 @@
                                             <td><?php echo($user->email) ?></td>
                                             <td><?php echo($user->birthday) ?></td>
                                             <td><?php echo($user->gender) ?></td>
+                                            <td><?php echo($user->role) ?></td>
+                                            <td><?php echo($user->status) ?></td>
                                             <td>
-                                                <a href="#lock" class="btnLock" data-toggle="modal"><i class="material-icons" title="Lock">lock</i></a>
-                                                <a href="#delete" class="btnDelete" data-toggle="modal"><i class="material-icons" title="Delete">&#xE872;</i></a>
+                                                <a href="../controllers/adminController.php?role=<?php echo $user->role; ?>&id=<?php echo $user->user_id; ?>" class="btnRole" >
+                                                    <i class="material-icons" title="Role">admin_panel_settings</i>
+                                                </a>
+                                                <a href="../controllers/adminController.php?status=<?php echo $user->status; ?>&id=<?php echo $user->user_id; ?>" class="btnLock" >
+                                                    <i class="material-icons" title="Lock">lock</i>
+                                                </a>
+                                                <a href="../controllers/adminController.php?deleteuser=<?php echo $user->user_id; ?>" class="btnDelete">
+                                                    <i class="material-icons" title="Delete">&#xE872;</i>
+                                                </a>
                                             </td>
                                         </tr>
                                         <?php } ?>
@@ -90,15 +101,17 @@
             </div>
             <!-- footer -->
 
-            <?php require "../../template/admin/footer.php" ?>
+            <?php include "../template/admin/footer.php" ?>
             <!-- ============================================================== -->
             
         </div>
     </div>
 
-    <?php require "../../template/admin/mainscript.php" ?>
+    <?php include "../template/admin/mainscript.php" ?>
 
     <script>
+
+
         $(".tab-manage-user").addClass('active');
     </script>
 
