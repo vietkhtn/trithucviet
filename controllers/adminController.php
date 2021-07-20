@@ -5,6 +5,7 @@ require_once '../PHPMailer/sendEmail.php';
 
 $usersList = $loadFromAdmin->getAllUser();
 $postsList = $loadFromAdmin->getAllPost();
+$answersList = $loadFromAdmin->getAllAnswer();
 
 
 if (isset($_GET['role'])) {
@@ -36,9 +37,9 @@ if (isset($_GET['deletepost']))
     header('Location: /trithucviet/views/managepost.php');
 }
 
-if (isset($_GET['approve']))
+if (isset($_GET['approvepost']))
 {
-    $postId = $_GET['approve'];
+    $postId = $_GET['approvepost'];
     $loadFromAdmin->approvePost($postId);
     $dataPost = $loadFromAdmin->getPostById($postId);
     $userPost = $loadFromAdmin->getUserById($dataPost->postBy);
@@ -46,13 +47,22 @@ if (isset($_GET['approve']))
     header('Location: /trithucviet/views/managepost.php');
 }
 
-if (isset($_GET['mail']))
+if (isset($_GET['deleteanswer']))
 {
-    $mail = $_GET['mail'];
-    sendMail($mail);
-    header('Location: /trithucviet/views/manageuser.php');
+    $answerId = $_GET['deleteanswer'];
+    $loadFromAdmin->deleteAnswer($answerId);
+    header('Location: /trithucviet/views/manageanswer.php');
 }
 
+if (isset($_GET['approveanswer']))
+{
+    $answerId = $_GET['approveanswer'];
+    $loadFromAdmin->approveAnswer($answerId);
+    $dataAnswer = $loadFromAdmin->getAnswerById($answerId);
+    $userAnswer = $loadFromAdmin->getUserById($dataAnswer->postBy);
+    sendMail($userAnswer->email, $dataAnswer->title, $dataAnswer->content, "answer");
+    header('Location: /trithucviet/views/managepost.php');
+}
 
 ?>
 

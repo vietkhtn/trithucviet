@@ -33,6 +33,12 @@ class Admin extends Base{
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function getAllAnswer() {
+        $statement = $this->pdo->prepare('SELECT * FROM answer');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
     public function deleteUser($userId) {
         $statement = $this->pdo->prepare('DELETE FROM users WHERE user_id = :userId');
         $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
@@ -84,10 +90,34 @@ class Admin extends Base{
         $statement = $this->pdo->prepare('UPDATE question SET isSpam = 0 WHERE question_id = :postId');
         $statement->bindParam(':postId', $postId, PDO::PARAM_STR);
         $statement->execute();
-        $statement->fetch(PDO::FETCH_OBJ);
-
-        
+        $statement->fetch(PDO::FETCH_OBJ);     
     }
+
+
+    public function getAnswerById($answerId) {
+        $statement = $this->pdo->prepare('SELECT * FROM answer WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function deleteAnswer($answerId) {
+
+        //detele answer
+        $statement = $this->pdo->prepare('DELETE FROM answer WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function approveAnswer($answerId) {
+        $statement = $this->pdo->prepare('UPDATE answer SET isSpam = 0 WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);     
+    }
+
+
 }
 
 ?>

@@ -24,7 +24,7 @@
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Manage Post</h4>
+                        <h4 class="page-title">Manage Answer</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <div class="d-md-flex">
@@ -52,14 +52,14 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Manage Post</h3>
+                            <h3 class="box-title">Manage Answer</h3>
                             <div class="table-responsive">
                                 <table class="table text-nowrap table-hover" id="table_id">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th style="display: none;"></th>
                                             <th class="border-top-0">#</th>
-                                            <th class="border-top-0">Title</th>
+                                            <th class="border-top-0">Question</th>
                                             <th class="border-top-0">Tags</th>
                                             <th class="border-top-0 ">postOn</th>
                                             <th class="border-top-0">Post By</th>
@@ -69,20 +69,20 @@
                                     </thead>
                         
                                     <tbody>
-                                        <?php forEach ($postsList as $post) { ?>
+                                        <?php forEach ($answersList as $answer) { ?>
                                         <tr class="data">
-                                            <td style="display: none; "><?php echo($post->content) ?></td>
-                                            <td><?php echo($post->question_id) ?></td>
-                                            <td><?php echo($post->title) ?></td>
-                                            <td><?php echo($post->tags) ?></td>
-                                            <td><?php echo($post->postOn) ?></td>
-                                            <td><?php echo($post->postBy) ?></td>
-                                            <td><?php echo($post->isSpam) ?></td>
+                                            <td style="display: none; "><?php echo($answer->content) ?></td>
+                                            <td><?php echo($answer->answer_id) ?></td>
+                                            <td><?php echo($answer->question_id) ?></td>
+                                            <td><?php echo($answer->tags) ?></td>
+                                            <td><?php echo($answer->postOn) ?></td>
+                                            <td><?php echo($answer->postBy) ?></td>
+                                            <td><?php echo($answer->isSpam) ?></td>
                                             <td>
                                                 <a href="#detail" class="btnInfo" data-toggle="modal"><i class="material-icons" title="Detail">info</i></a>
-                                                <a href="../controllers/adminController.php?deletepost=<?php echo $post->question_id; ?>" class="btnDelete"><i class="material-icons" title="Delete">&#xE872;</i></a>
-                                                <?php if($post->isSpam == 1) { ?>
-                                                    <a href="../controllers/adminController.php?approvepost=<?php echo $post->question_id; ?>" class="btnApprove"><i class="material-icons" title="Approve">near_me</i></a>
+                                                <a href="../controllers/adminController.php?deleteanswer=<?php echo $answer->answer_id; ?>" class="btnDelete"><i class="material-icons" title="Delete">&#xE872;</i></a>
+                                                <?php if($answer->isSpam == 1) { ?>
+                                                    <a href="../controllers/adminController.php?approveanswer=<?php echo $answer->answer_id; ?>" class="btnApprove"><i class="material-icons" title="Approve">near_me</i></a>
                                                 <?php } ?>
                                             </td>
                                         </tr>
@@ -106,7 +106,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Content Post</h4>
+                            <h4 class="modal-title">Content Answer</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
@@ -128,7 +128,7 @@
             var content = $(this).find("td").eq(0).html();
             $(".modal-body").html(content);
         })
-        $(".tab-manage-post").addClass('active');
+        $(".tab-manage-answer").addClass('active');
     </script>
 
 </body>

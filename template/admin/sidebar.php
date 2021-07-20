@@ -27,10 +27,10 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link tab-manage-answer" href="/trithucviet/views/manageanswer.php"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Manage </span>
+                                <span class="hide-menu">Manage Answer</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
