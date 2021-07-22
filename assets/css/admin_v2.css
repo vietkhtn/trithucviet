@@ -1,0 +1,40 @@
+.btnDelete {
+    color: #dc3545;
+}
+
+
+.btnInfo {
+    color: #17a2b8;
+}
+
+.btnApprove {
+    color: rgb(199, 179, 0);
+}
+
+.btnLock {
+    color: #27c981;
+}
+
+.btnApprove:hover, .btnDelete:hover, .btnInfo:hover, .btnLock:hover {
+    opacity: 0.6;
+}
+
+.custom-display {
+    display: inline-block;
+    white-space: nowrap;
+    width: 400px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+
+.modal-title {
+    font-weight: 700 !important;
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 650px;
+        margin: 1.75rem auto;
+    }
+}
