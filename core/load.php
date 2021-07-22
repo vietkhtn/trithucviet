@@ -7,6 +7,7 @@ require_once 'models/user.php';
 require_once 'models/question.php';
 require_once 'models/profile.php';
 
+
 global $pdo;
 
 $Base = new Base($pdo);
