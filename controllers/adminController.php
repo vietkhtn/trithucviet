@@ -64,5 +64,8 @@ if (isset($_GET['approveanswer']))
     header('Location: /trithucviet/views/managepost.php');
 }
 
+//trung
+
+
 ?>
 

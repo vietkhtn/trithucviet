@@ -8,7 +8,7 @@ class DB {
     public $DB_NAME="stackoverflow";
     public $HOST="127.0.0.1";
     public $USER="root";
-    public $PASSWORD="Phamvantrinh99";
+    public $PASSWORD="Teotu_19";
 
     private static function connnect() {
         $pdo = new PDO("mysql:host=$HOST;port=3306;dbname=$DB_NAME;charset=utf8mb4', '$USER', '$PASSWORD'");

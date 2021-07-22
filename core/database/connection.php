@@ -4,7 +4,7 @@
 //  $passAdmin = 'mp42r1Xetr3wuumJVeCj';
 $hostInfo = 'mysql:host=127.0.0.1:3306;dbname=stackoverflow;charset=utf8mb4';
 $userAdmin = 'root';
-$passAdmin = 'Phamvantrinh99';
+$passAdmin = 'Teotu_19';
 
 try {
     $pdo = new PDO($hostInfo, $userAdmin, $passAdmin);
