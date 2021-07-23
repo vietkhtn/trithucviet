@@ -34,7 +34,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link tab-manage-answer" href="/trithucviet/views/userranking.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link tab-manage-user-ranking" href="/trithucviet/views/userranking.php"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
                                 <span class="hide-menu">User Ranking</span>

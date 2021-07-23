@@ -119,8 +119,21 @@ class Admin extends Base{
 
 
     //trung
-    
-
+    public function getRankAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_question, an.total_answer, (ques.total_question + an.total_answer) AS total
+        FROM users u, (SELECT u.user_id , count(q.question_id) AS total_question
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id,u.screen_name , count(a.answer_id) AS total_answer
+                        FROM users u
+                        LEFT JOIN  answer a ON u.user_id = a.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id ');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
 }
 
 ?>

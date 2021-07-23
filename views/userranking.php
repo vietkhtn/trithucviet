@@ -144,6 +144,9 @@
     );
     </script>
 
+    <script>
+    $(".tab-manage-user-ranking").addClass('active');
+    </script>
 
 </body>
 
