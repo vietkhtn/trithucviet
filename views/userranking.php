@@ -23,12 +23,15 @@
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="page-breadcrumb bg-white">
-                <div class="row align-items-center">
-                    <h4 class="page-title">User Ranking</h4>
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <div class="row col-sm-12">
+                    <div class="col-sm-6">
+                        <h4 class="page-title">User Ranking</h4>
                     </div>
-
+                    <div class="col-sm-6" style="text-align: end;">
+                        <h4 class="page-title">User Ranking</h4>
+                    </div>
                 </div>
+
                 <!-- /.col-lg-12 -->
             </div>
             <!-- ============================================================== -->
@@ -42,18 +45,30 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
+                    <div class="col-sm-8">
+                        <div class="white-box">
+                            <div>
+                                <canvas id="userScoreChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="white-box"></div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-sm-12" style="display: -webkit-inline-box;">
                         <div class="col-sm-6">
                             <div class="white-box">
                                 <div>
-                                    <canvas id="userScoreChart"></canvas>
+                                    <canvas id="userTTQuesChart"></canvas>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="white-box">
                                 <div>
-                                    <canvas id="userTTQuesChart"></canvas>
+                                    <canvas id="userTTAnsChart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +107,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     const dataUserRank = JSON.parse('<?=json_encode($userRank)?>')
-    function configChartBar(result, labelChart, labelItemName, dataItemName, backGroundColor, borderColor) {
+
+    function configChartBar(result, labelChart, labelItemName, dataItemName, backGroundColor, borderColor, chartStyle) {
         let labels = [];
         let datas = [];
         result.map(item => {
@@ -110,7 +126,7 @@
             }]
         };
         return {
-            type: 'bar',
+            type: chartStyle,
             data: data,
             options: {
                 scales: {
@@ -122,8 +138,12 @@
         };
     }
 
-    const configUserScoreChart = configChartBar(dataUserRank,"Score","screen_name", "total", 'rgba(255, 159, 64, 0.2)','rgb(255, 159, 64)');
-    const configUserTotalQues = configChartBar(dataUserRank,"Total Question","screen_name", "total_question", 'rgba(54, 162, 235, 0.2)','rgb(54, 162, 235)');
+    const configUserScoreChart = configChartBar(dataUserRank, "Score", "screen_name", "total",
+        'rgba(75, 192, 192, 0.2)', 'rgb(75, 192, 192)', 'bar');
+    const configUserTotalQues = configChartBar(dataUserRank, "Total Question", "screen_name", "total_question",
+        'rgba(54, 162, 235, 0.2)', 'rgb(54, 162, 235)', 'line');
+    const configUserTotalAns = configChartBar(dataUserRank, "Total Answer", "screen_name", "total_answer",
+        'rgba(201, 203, 207, 0.2)', 'rgb(201, 203, 207)', 'line');
 
     var userScoreChart = new Chart(
         document.getElementById('userScoreChart'),
@@ -132,6 +152,10 @@
     var userTTQuesChart = new Chart(
         document.getElementById('userTTQuesChart'),
         configUserTotalQues
+    );
+    var userTTAnsChart = new Chart(
+        document.getElementById('userTTAnsChart'),
+        configUserTotalAns
     );
     </script>
 

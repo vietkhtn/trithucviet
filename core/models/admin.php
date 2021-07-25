@@ -130,7 +130,8 @@ class Admin extends Base{
                         FROM users u
                         LEFT JOIN  answer a ON u.user_id = a.user_id
                         GROUP BY u.user_id) AS an
-        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id ');
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id
+        ORDER BY total DESC ');
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
