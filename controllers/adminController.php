@@ -67,7 +67,11 @@ if (isset($_GET['approveanswer']))
 
 //trung
 $userRank = $loadFromAdmin->getRankAllUser();
+$isSort= "ascending";
 
+if (isset($_GET['sort'])){
+    $isSort = ($_GET['sort'] == "deascending") ? "deascending" : "ascending";
+}
 
 ?>
 
