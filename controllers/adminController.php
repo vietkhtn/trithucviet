@@ -7,6 +7,9 @@ $usersList = $loadFromAdmin->getAllUser();
 $postsList = $loadFromAdmin->getAllPost();
 $answersList = $loadFromAdmin->getAllAnswer();
 
+//trung
+$userRank = $loadFromAdmin->getRankAllUser();
+
 
 if (isset($_GET['role'])) {
     $userId = $_GET['id'];
@@ -64,7 +67,6 @@ if (isset($_GET['approveanswer']))
     header('Location: /trithucviet/views/managepost.php');
 }
 
-//trung
 
 
 ?>
