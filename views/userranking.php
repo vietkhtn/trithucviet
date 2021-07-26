@@ -140,7 +140,8 @@
     let isSort = "<?=$isSort?>";
     console.log(dataTTVote)
 
-    function configChartBar(result, labelChart, labelItemName, dataItemName, backGroundColor, borderColor, chartStyle) {
+    function configChartBar(result, labelChart, labelItemName, dataItemName, backGroundColor, borderColor, chartStyle,
+        title, isDisplayLegend) {
         let labels = [];
         let datas = [];
         result.map(item => {
@@ -177,8 +178,15 @@
                             font: {
                                 size: 10
                             }
-                        }
-                    }
+                        },
+                        position: "bottom",
+                        display: (isDisplayLegend) || false
+                    },
+                    title: {
+                        display: (title) ? true : false,
+                        text: title
+                    },
+                    
                 }
             }
         };
@@ -186,11 +194,11 @@
 
     function loadChart() {
         const configUserScoreChart = configChartBar(dataUserRank, "Score", "screen_name", "total",
-            'rgba(75, 192, 192, 0.2)', 'rgb(75, 192, 192)', 'bar');
+            'rgba(75, 192, 192, 0.2)', 'rgb(75, 192, 192)', 'bar', 'Score');
         const configUserTotalQues = configChartBar(dataUserRank, "Total Question", "screen_name", "total_question",
-            'rgba(54, 162, 235, 0.2)', 'rgb(54, 162, 235)', 'line');
+            'rgba(54, 162, 235, 0.2)', 'rgb(54, 162, 235)', 'line',"Total Question");
         const configUserTotalAns = configChartBar(dataUserRank, "Total Answer", "screen_name", "total_answer",
-            'rgba(201, 203, 207, 0.2)', 'rgb(201, 203, 207)', 'line');
+            'rgba(201, 203, 207, 0.2)', 'rgb(201, 203, 207)', 'line', "Total Answer");
         const configUserTotalVote = configChartBar(dataTTVote, "Vote Count", "screen_name", "total",
             [
                 'rgba(201, 203, 207, 0.3)',
@@ -202,7 +210,7 @@
                 'rgba(75, 192, 192, 0.3)',
             ], [
                 'grey',
-            ], 'doughnut');
+            ], 'doughnut', 'Total vote', true);
 
         const configUserTotalSpam = configChartBar(dataTTSpam, "Spam Count", "screen_name", "total",
             [
@@ -215,7 +223,7 @@
                 'rgba(75, 192, 192, 0.3)',
             ], [
                 'grey',
-            ], 'doughnut');
+            ], 'doughnut', 'Total Spam', true);
 
         var userScoreChart = new Chart(
             document.getElementById('userScoreChart'),
