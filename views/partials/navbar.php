@@ -26,9 +26,9 @@
              </button>
          </div>
          <div class="col-md-5">
-             <form class="d-flex">
-                 <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-                 <button type="submit"
+             <form class="d-flex" >
+                 <input class="form-control me-2" type="search" name="searchquery" placeholder="Search..." aria-label="Search">
+                 <button type="submit" method="GET"
                      style="border: none;color: dimgray;padding: 6px;text-align: center;/* text-decoration: none; */display: inline-block;border-radius: 34px;width: 50px;">
                      <span class="material-icons">search</span></button>
              </form>
