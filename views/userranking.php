@@ -31,9 +31,10 @@
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <button type="button" class="btn btn-light">Weekly</button>
                             <button type="button" class="btn btn-light">Monthly</button>
-                            <button type="button" class="btn btn-light"><a href="?sort=ascending"><span class="material-icons">
-                                    arrow_downward
-                                </span></a></button>
+                            <button type="button" class="btn btn-light"><a href="?sort=ascending"><span
+                                        class="material-icons">
+                                        arrow_downward
+                                    </span></a></button>
                             <button type="button" class="btn btn-light"><a href="?sort=deascending"><span
                                         class="material-icons">
                                         arrow_upward
@@ -57,15 +58,29 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-sm-8">
-                        <div class="white-box">
+                    <div class="col-sm-9">
+                        <div class="white-box" style="height: 45rem;">
                             <div>
                                 <canvas id="userScoreChart"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
-                        <div class="white-box"></div>
+                    <div class="col-sm-3">
+                        <div class="row">
+                            <div class="white-box">
+                                <div>
+                                    <canvas id="userTTVoteChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="white-box">
+                                <div>
+                                    <canvas id="userTTSpamChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="row">
@@ -119,8 +134,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     const dataUserRank = JSON.parse('<?=json_encode($userRank)?>')
+    const dataTTVote = JSON.parse('<?=json_encode($userTTVote)?>')
+    const dataTTSpam = JSON.parse('<?=json_encode($userTTSpam)?>')
+
     let isSort = "<?=$isSort?>";
-    console.log(isSort)
+    console.log(dataTTVote)
 
     function configChartBar(result, labelChart, labelItemName, dataItemName, backGroundColor, borderColor, chartStyle) {
         let labels = [];
@@ -140,7 +158,8 @@
                 data: datas,
                 backgroundColor: backGroundColor,
                 borderColor: borderColor,
-                borderWidth: 1
+                borderWidth: 1,
+                tension: 0.1
             }]
         };
         return {
@@ -150,6 +169,15 @@
                 scales: {
                     y: {
                         beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 10
+                            }
+                        }
                     }
                 }
             }
@@ -163,6 +191,31 @@
             'rgba(54, 162, 235, 0.2)', 'rgb(54, 162, 235)', 'line');
         const configUserTotalAns = configChartBar(dataUserRank, "Total Answer", "screen_name", "total_answer",
             'rgba(201, 203, 207, 0.2)', 'rgb(201, 203, 207)', 'line');
+        const configUserTotalVote = configChartBar(dataTTVote, "Vote Count", "screen_name", "total",
+            [
+                'rgba(201, 203, 207, 0.3)',
+                'rgba(54, 162, 235, 0.3)',
+                'rgba(153, 102, 255, 0.3)',
+                'rgba(255, 99, 132, 0.3)',
+                'rgba(255, 159, 64, 0.3)',
+                'rgba(255, 205, 86, 0.3)',
+                'rgba(75, 192, 192, 0.3)',
+            ], [
+                'grey',
+            ], 'doughnut');
+
+        const configUserTotalSpam = configChartBar(dataTTSpam, "Spam Count", "screen_name", "total",
+            [
+                'rgba(201, 203, 207, 0.3)',
+                'rgba(54, 162, 235, 0.3)',
+                'rgba(153, 102, 255, 0.3)',
+                'rgba(255, 99, 132, 0.3)',
+                'rgba(255, 159, 64, 0.3)',
+                'rgba(255, 205, 86, 0.3)',
+                'rgba(75, 192, 192, 0.3)',
+            ], [
+                'grey',
+            ], 'doughnut');
 
         var userScoreChart = new Chart(
             document.getElementById('userScoreChart'),
@@ -175,6 +228,14 @@
         var userTTAnsChart = new Chart(
             document.getElementById('userTTAnsChart'),
             configUserTotalAns
+        );
+        var userTTSpamChart = new Chart(
+            document.getElementById('userTTSpamChart'),
+            configUserTotalSpam
+        );
+        var userTTVoteChart = new Chart(
+            document.getElementById('userTTVoteChart'),
+            configUserTotalVote
         );
     }
 

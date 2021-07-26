@@ -135,6 +135,43 @@ class Admin extends Base{
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function getTotalVoteAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_vote, an.total_vote, (ques.total_vote + an.total_vote) AS total
+        FROM users u, (SELECT u.user_id ,u.screen_name, IFNULL(SUM(q.voteCount),0) AS total_vote
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id ,u.screen_name, IFNULL(SUM(a.voteCount),0) AS total_vote
+                        FROM users u
+                        LEFT JOIN  answer a ON a.user_id = u.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id 
+        ORDER BY total DESC');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getTotalSpamAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_spam, an.total_spam, (ques.total_spam + an.total_spam) AS total
+        FROM users u, (SELECT u.user_id ,u.screen_name, IFNULL(SUM(q.totalSpam),0) AS total_spam
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id ,u.screen_name, IFNULL(SUM(a.totalSpam),0) AS total_spam
+                        FROM users u
+                        LEFT JOIN  answer a ON a.user_id = u.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id 
+        ORDER BY total DESC');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
 }
 
 ?>

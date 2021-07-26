@@ -67,6 +67,8 @@ if (isset($_GET['approveanswer']))
 
 //trung
 $userRank = $loadFromAdmin->getRankAllUser();
+$userTTVote = $loadFromAdmin->getTotalVoteAllUser();
+$userTTSpam = $loadFromAdmin->getTotalSpamAllUser();
 $isSort= "ascending";
 
 if (isset($_GET['sort'])){
