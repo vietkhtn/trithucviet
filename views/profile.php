@@ -182,12 +182,10 @@
                             <?php } ?>
 
                             <div class="ptaf-wrap">
-                                <?php $question = $loadFromQuestion->postQuestionData($user_id, $profileId, 20);       
-                                    // List Quesitons in page
-                                    forEach ($questions as $question) {
+                                <?php $questions = $loadFromQuestion->postQuestionData($user_id, $profileId, 10);     
+                                    forEach ($questions as $question) { 
                                         ?>
-                                            <div class="profile-timeline">
-                                                
+                                            <div class="profile-timeline">                                           
                                                 <div class="news-feed-container">
                                                     <div class="news-feed-content">
                                                         <!-- Question Post Stat -->
@@ -219,7 +217,7 @@
                                                                         </div>
                                                                         <div class="nf-pro-privacy">
                                                                             <div class="nf-pro-time">
-                                                                                <?php echo $this->timeAgo($question->postOn); ?>
+                                                                                <?php echo $question->postOn ?>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -249,7 +247,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
                                         <?php
                                     }
                                 ?>

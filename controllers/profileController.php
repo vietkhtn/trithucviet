@@ -13,6 +13,7 @@ if (login::isLoggedIn()){
 
 
 if (isset($_GET['username']) == true && empty($_GET['username']) == false){
+
     $username = $loadFromUser->checkInput($_GET['username']);
 
     $_SESSION['username'] = $username;

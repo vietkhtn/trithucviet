@@ -1,12 +1,5 @@
 <?php 
 require_once '../controllers/questionDetailController.php';
-
-$old = '[{"value": "sadfasdf"}, {"value": "adviet"}]';
-var_dump($old);
-
-$new = str_replace('\"', '\\"', $old);
-var_dump($new);
-
 ?>
 
 
