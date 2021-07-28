@@ -1,5 +1,11 @@
 <?php 
-require_once '../controllers/questionDetailController.php'
+require_once '../controllers/questionDetailController.php';
+
+$old = '[{"value": "sadfasdf"}, {"value": "adviet"}]';
+var_dump($old);
+
+$new = str_replace('\"', '\\"', $old);
+var_dump($new);
 
 ?>
 
@@ -88,7 +94,64 @@ require_once '../controllers/questionDetailController.php'
             <div class="answer-count"><?php echo $questionData->answerCount; ?> Answer</div>
             <div class="list-answer-wrap">
                 <div class="list-answer">
-                    <?php $loadFromAnswer->listAllAnswersByQuestionId($questionData->question_id); ?>
+                    <?php $answers = $loadFromAnswer->listAllAnswersByQuestionId($questionData->question_id); 
+                        // Generate List Answers
+                        forEach ($answers as $answer) {
+                            ?>
+                                <div class="answer-detail-wrap">
+                                    <div class="answer-wrap-left">
+                                        <div class="voted-container">
+                                            <div class="up-vote-button">
+                                                <img src="../assets/image/upVote.png" class="up-vote-button-css">
+                                            </div>
+                                            <div class="voted-info">
+                                                <?php echo $answer->voteCount; ?>
+                                            </div>
+                                                <div class="down-vote-button">
+                                                <img src="../assets/image/downVote.png" class="down-vote-button-css">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="answer-wrap-right">
+                                        <div class="answer-content" id="answer-content">
+                                            <?php  echo $answer->content ?>
+                                        </div>
+                                        <div class="post-by-container">
+                                            <div class="user-info-wrap">
+                                                <div class="post-post-on">
+                                                    answered <?php echo $answer->postOn; ?>
+                                                </div>
+                                                <div class="user-detail-info-wrap">
+                                                    <div class="user-info-logo">
+                                                        <img src="<?php echo $answer->profilePic; ?>" class="user-info-profile-pic">
+                                                    </div>
+                                                    <div class="detail-info-container">
+                                                        <div class="user-info-name">
+                                                            <?php echo $answer->firstName.' '.$answer->lastName; ?>
+                                                        </div>
+                                                        <div class="achieve-info">
+                                                            <div class="total-vote-wrap">
+                                                                <img src="../assets/image/dotGrey.png" class="achieve-logo-css">
+                                                                <div class="total-amount">12</div>
+                                                            </div>
+                                                            <div class="total-answer-wrap">
+                                                                <img src="../assets/image/dotGreen.png" class="achieve-logo-css">
+                                                                <div class="total-amount">23</div>
+                                                            </div>
+                                                            <div class="total-spam-wrap">
+                                                                <img src="../assets/image/dotRed.png" class="achieve-logo-css">
+                                                                <div class="total-amount">2</div>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                       
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
             <!-- List Answer -->
