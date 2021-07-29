@@ -1,9 +1,9 @@
 
 <?php 
 
-$hostInfo = 'mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4';
+$hostInfo = 'mysql:host=127.0.0.1:3306; dbname=stackoverflow; charset=utf8mb4';
 $userAdmin = 'root';
-$passAdmin = '';
+$passAdmin = 'Teotu_19';
 
 try {
     $pdo = new PDO($hostInfo, $userAdmin, $passAdmin);

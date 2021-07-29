@@ -7,7 +7,7 @@ class DB {
     // public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
 
     private static function connnect() {
-        $pdo = new PDO("mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4", 'root','');
+        $pdo = new PDO("mysql:host=127.0.0.1:3306; dbname=stackoverflow; charset=utf8mb4", 'root','Teotu_19');
 
         // Report error and exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
