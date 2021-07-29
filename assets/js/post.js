@@ -160,6 +160,17 @@ $(function() {
                         formData.append('questionTags', tags);
                         formData.append('questionContent', content);
                         formData.append('userId', userId);
+                        $.ajax({
+                            url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            type: 'post',
+                            success: function(){
+                                location.reload();
+                            }
+                        })
                     }
                 },
                 error: function(){
