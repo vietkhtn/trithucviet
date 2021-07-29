@@ -61,14 +61,17 @@ $(function() {
         var title = document.getElementById('questionTitle').value;
         var listTag = document.getElementsByClassName('tag-name-wrapper');
         var iframe = document.getElementById('postText');
-        var content = iframe.contentWindow.document.body.innerHTML;
-        var contentText = iframe.contentWindow.document.body.innerText;
+        var content = window.frames['.questionText'].document.body.innerHTML;
+        var contentText = window.frames['.questionText'].document.body.innerText;
+        // var content = iframe.contentWindow.document.body.innerHTML;
+        // var contentText = iframe.contentWindow.document.body.innerText;
         var tags = new Array();
         for (var i = 0; i < listTag.length; i++) {
             tags.push(listTag[i].innerText);
         }
         // Call API check Bad Word in content
         // If content contains words -> check words in content
+        debugger;
         if(contentText != ""){
             $.ajax({
                 url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
