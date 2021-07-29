@@ -1,7 +1,7 @@
 <!-- Top Left -->
 <div class="top-left-part">
                 <!-- Logo -->
-                <a href="master-layout.php?username=<?php echo $profileData->userLink ?>"><img class="img-logo"src="../assets/image/stackoverflow.png"/></a>
+                <a href="../views/index.php"><img class="img-logo"src="../assets/image/stackoverflow.png"/></a>
                 <!-- Search Bar-->
                 <div class="search-wrap">
                     <label clas="name-label">

@@ -14,7 +14,7 @@
             <div>
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="index.php" class="link-dark rounded">Questions</a></li>
-                    <li><a href="#" class="link-dark rounded">Tags</a></li>
+                    <li><a href="tag.php" class="link-dark rounded" >Tags</a></li>
                     <li><a href="user_page.php" class="link-dark rounded">User</a></li>
                 </ul>
             </div>

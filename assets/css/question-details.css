@@ -78,6 +78,7 @@
 .question-content {
     position: relative;
     padding: 20px;
+    width: 100%;
     padding-bottom: 60px;
 }
 
@@ -213,4 +214,10 @@ img.logo-regulation {
 .question-title-lite-container {
     color: #0077cc;
     padding: 5px;
+}
+
+.user-asked-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
