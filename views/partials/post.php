@@ -26,7 +26,7 @@
                 style="width: 2.2rem;height: 1.1rem;padding: 0.2em 0.2em;font-weight: 500;margin-top: 7px;">
                 +50
             </div>
-            <div class="col-md-auto"><a href=""
+            <div class="col-md-auto"><a href="../template/master-layout.php?question=<?php echo $question->question_id?>"
                     style="text-decoration: none;font-size: 22px;"><?php echo $question->title ?></a></div>
         </div>
         <div id="content" class="row" style="font-size: 16px;padding-bottom: 16px;padding-top: 2px;">
