@@ -23,14 +23,14 @@ $(function() {
                 body: formData
             }).then(data => data.json()).then(data =>{
                 if (data != null) {
-                    $.post('http://localhost/stackoverflow_v1/core/ajax/coverPhoto.php', {  
+                    $.post('http://localhost/trithucviet/core/ajax/coverPhoto.php', {  
                                 imageUrl: data.data.url, 
                                 userId: userId
                             }, function(data) {
 
                     })
                     $.ajax({
-                        url: 'http://localhost/stackoverflow_v1/core/ajax/coverPhoto.php', 
+                        url: 'http://localhost/trithucviet/core/ajax/coverPhoto.php', 
                         cache: false,
                         contentType: false,
                         processData: false,
@@ -54,7 +54,7 @@ $(function() {
                 body: formData
             }).then(data => data.json()).then(data =>{
                 if (data != null) {
-                    $.post('http://localhost/stackoverflow_v1/core/ajax/profilePhoto.php', 
+                    $.post('http://localhost/trithucviet/core/ajax/profilePhoto.php', 
                     {  
                         imageUrl: data.data.url, 
                         userId: userId
@@ -62,7 +62,7 @@ $(function() {
                         
                     })
                     $.ajax({
-                        url: 'http://localhost/stackoverflow_v1/core/ajax/profilePhoto.php', 
+                        url: 'http://localhost/trithucviet/core/ajax/profilePhoto.php', 
                         cache: false,
                         contentType: false,
                         processData: false,

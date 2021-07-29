@@ -17,6 +17,6 @@ $loadFromQuestion = new Question($pdo);
 $loadFromAnswer = new Answer($pdo);
 $loadFromProfle = new Profile($pdo);
 
-define("BASE_URL", "http://localhost/stackoverflow_v1");
+define("BASE_URL", "http://localhost/trithucviet");
 
 ?>

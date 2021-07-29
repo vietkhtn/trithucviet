@@ -26,7 +26,7 @@ $(function() {
                         formData.append('questionId', questionId);
                         formData.append('answerContent', contentText);
                         $.ajax({
-                            url: 'http://localhost/stackoverflow_v1/core/ajax/postAnswer.php', 
+                            url: 'http://localhost/trithucviet/core/ajax/postAnswer.php', 
                             cache: false,
                             contentType: false,
                             processData: false,
