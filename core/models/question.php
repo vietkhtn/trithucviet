@@ -84,5 +84,93 @@ class Question extends User {
         }
         $statement->execute();
     }
+
+    //trung
+    public function getAllQuestionAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id
+        ORDER BY question.postOn');
+        $statement->execute();
+
+        $questions = $statement->fetchAll(PDO::FETCH_OBJ);
+
+        return $questions;
+    }
+
+    public function getCountQuestions() {
+        $statement = $this->pdo->prepare(
+        'SELECT count(*) AS `count`
+        FROM question'); 
+        $statement->execute();
+
+        $countQuestion = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $countQuestion;
+    }
+
+    public function getNewestQsAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id
+        ORDER BY question.postOn DESC'); 
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getActiveQsAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id and question.isSpam = 0
+        ORDER BY question.postOn'); 
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getUnanswerQsAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id and question.answerCount = 0
+        ORDER BY question.postOn'); 
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getVoteQsAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id 
+        ORDER BY question.voteCount DESC'); 
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getFrequentQsAndUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT *
+        FROM question, users,profile
+        WHERE question.user_id = users.user_id and users.user_id = profile.user_id
+        ORDER BY question.answerCount DESC'); 
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get1QuestionByContent($searchText) {
+        $text = "%$searchText%";
+        $statement = $this->pdo->prepare(
+            'SELECT *
+            FROM question, users,profile
+            WHERE question.user_id = users.user_id and users.user_id = profile.user_id AND question.content LIKE :searchText
+            ORDER BY question.answerCount DESC');
+        $statement->bindParam(':searchText',$text, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
 }
 ?>

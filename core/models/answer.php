@@ -16,6 +16,5 @@ class Answer extends Question{
         return $answers;
         
     }
-
 }
 ?>

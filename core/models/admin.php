@@ -1,0 +1,177 @@
+<?php 
+
+class Admin extends Base{
+    protected $pdo;
+
+    function __construct($pdo) {
+        $this->pdo = $pdo;
+    }
+
+    public function checkInput($variable){
+        $variable = htmlspecialchars($variable);
+        $variable = trim($variable);
+        $variable = stripslashes($variable);
+        return $variable; 
+    }
+
+
+    public function getUserById($userId) {
+        $statement = $this->pdo->prepare('SELECT * FROM users WHERE user_id = :userId');
+        $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+    public function getAllUser() {
+        $statement = $this->pdo->prepare('SELECT * FROM users');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getAllPost() {
+        $statement = $this->pdo->prepare('SELECT * FROM question');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getAllAnswer() {
+        $statement = $this->pdo->prepare('SELECT * FROM answer');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function deleteUser($userId) {
+        $statement = $this->pdo->prepare('DELETE FROM users WHERE user_id = :userId');
+        $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function setRoleUser($userId, $role) {
+        $statement = $this->pdo->prepare('UPDATE users SET role = :role WHERE user_id = :userId');
+        $statement->bindParam(':role', $role, PDO::PARAM_STR);
+        $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function setStatusUser($userId, $status) {
+        $statement = $this->pdo->prepare('UPDATE users SET status = :status WHERE user_id = :userId');
+        $statement->bindParam(':status', $status, PDO::PARAM_STR);
+        $statement->bindParam(':userId', $userId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function getPostById($postId) {
+        $statement = $this->pdo->prepare('SELECT * FROM question WHERE question_id = :postId');
+        $statement->bindParam(':postId', $postId, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function deletePost($postId) {
+
+        //detele answer
+        $statement = $this->pdo->prepare('DELETE FROM answer WHERE question_id = :postId');
+        $statement->bindParam(':postId', $postId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+
+        //delete question
+        $statement = $this->pdo->prepare('DELETE FROM question WHERE question_id = :postId');
+        $statement->bindParam(':postId', $postId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+
+        
+    }
+
+    public function approvePost($postId) {
+        $statement = $this->pdo->prepare('UPDATE question SET isSpam = 0 WHERE question_id = :postId');
+        $statement->bindParam(':postId', $postId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);     
+    }
+
+
+    public function getAnswerById($answerId) {
+        $statement = $this->pdo->prepare('SELECT * FROM answer WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function deleteAnswer($answerId) {
+
+        //detele answer
+        $statement = $this->pdo->prepare('DELETE FROM answer WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function approveAnswer($answerId) {
+        $statement = $this->pdo->prepare('UPDATE answer SET isSpam = 0 WHERE answer_id = :answerId');
+        $statement->bindParam(':answerId', $answerId, PDO::PARAM_STR);
+        $statement->execute();
+        $statement->fetch(PDO::FETCH_OBJ);     
+    }
+
+
+    //trung
+    public function getRankAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_question, an.total_answer, (ques.total_question + an.total_answer) AS total
+        FROM users u, (SELECT u.user_id , count(q.question_id) AS total_question
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id,u.screen_name , count(a.answer_id) AS total_answer
+                        FROM users u
+                        LEFT JOIN  answer a ON u.user_id = a.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id
+        ORDER BY total DESC');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getTotalVoteAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_vote, an.total_vote, (ques.total_vote + an.total_vote) AS total
+        FROM users u, (SELECT u.user_id ,u.screen_name, IFNULL(SUM(q.voteCount),0) AS total_vote
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id ,u.screen_name, IFNULL(SUM(a.voteCount),0) AS total_vote
+                        FROM users u
+                        LEFT JOIN  answer a ON a.user_id = u.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id 
+        ORDER BY total DESC');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getTotalSpamAllUser() {
+        $statement = $this->pdo->prepare(
+        'SELECT u.user_id,u.screen_name, ques.total_spam, an.total_spam, (ques.total_spam + an.total_spam) AS total
+        FROM users u, (SELECT u.user_id ,u.screen_name, IFNULL(SUM(q.totalSpam),0) AS total_spam
+                        FROM users u
+                        LEFT JOIN  question q ON q.user_id = u.user_id
+                        GROUP BY u.user_id) AS ques, 
+                        (SELECT u.user_id ,u.screen_name, IFNULL(SUM(a.totalSpam),0) AS total_spam
+                        FROM users u
+                        LEFT JOIN  answer a ON a.user_id = u.user_id
+                        GROUP BY u.user_id) AS an
+        WHERE u.user_id = an.user_id AND u.user_id = ques.user_id 
+        ORDER BY total DESC');
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
+
+}
+
+?>

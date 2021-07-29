@@ -6,11 +6,11 @@
     let userId = '<?php echo $user_id?>';
     // Auto adjust iframe height depend on content typing
     function resizeFrameHeight() {
-        document.getElementById('postText').contentWindow.document.designMode = "on";       
-        document.getElementById('postText').contentWindow.document.onkeyup = function(event) {
-            var frm = document.getElementById('postText');
+        document.getElementById('questionText').contentWindow.document.designMode = "on";       
+        document.getElementById('questionText').contentWindow.document.onkeyup = function(event) {
+            var frm = document.getElementById('questionText');
             frm.style.overflow = 'hidden';
-            frm.style.height = postText.document.body.scrollHeight + 'px';
+            frm.style.height = questionText.document.body.scrollHeight + 'px';
         }    
     }  
 </script>
@@ -128,7 +128,7 @@
                                             <div id="tag-space-container" class="tag-space-container">
 
                                             </div>
-                                            <label for="postText"><b>Body</b></label>
+                                            <label for="questionText"><b>Body</b></label>
                                             <div class="body-description-text">Include all the information someone would need to answer your question</div>
                                             <form class="edit-question-bar">
                                                 <button type="button" data-cmd="bold" class="edit-content-button-css">
@@ -171,7 +171,7 @@
                                                 <i class="fas fa-code"></i>
                                                 </button>
                                             </form>
-                                            <iframe name="postText" id="postText" class="question align-middle" onload="resizeFrameHeight()"></iframe>
+                                            <iframe name="questionText" id="questionText" class="question align-middle" onload="resizeFrameHeight()"></iframe>
                                             <!-- Post your question button -->
                                             <div class="ask-button-wrap">
                                                 <div class="ask-button">Post your question</div>

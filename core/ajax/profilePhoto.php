@@ -10,7 +10,7 @@ if (isset($_POST['imageUrl'])){
     $imageUrl = $loadFromUser->checkInput($_POST['imageUrl']);
     $user_id = $loadFromUser->checkInput($_POST['userId']);
     
-    $loadFromUser->updateUserData('profile', $user_id, array('profilePic' => $imageUrl));
+    $loadFromUser->update('profile', $user_id, array('profilePic' => $imageUrl));
 
 }else{
 

@@ -22,6 +22,29 @@ Class Base{
         }
     }
 
+    public function update($table, $userId, $fields = array()) {
+        $columns = '';
+        $i = 1;
+
+        foreach ($fields as $name => $value){
+            $columns .= "{$name} = :{$name}"; //coverPic = :coverPic
+            // if mutiple field update, add comma between columns
+            if($i < count($fields)){
+                $columns .= ',';
+            }
+            $i++;
+        }
+        // Update Query
+        $sql = "UPDATE {$table} SET {$columns} WHERE user_id = {$userId}";
+
+        // Binding value to sql query
+        if($statement = $this->pdo->prepare($sql)){
+            foreach ($fields as $key =>$value){
+                $statement->bindValue(':'.$key, $value);
+            }
+        }
+        $statement->execute();
+    }
 
     public function timeAgo($datetime){
         $time = strtotime($datetime);

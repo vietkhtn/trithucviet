@@ -48,7 +48,7 @@ require_once '../controllers/questionDetailController.php';
                         </div>  
                     </div>
                     <!-- Asked by -->
-                    <div class="user-asked-wrap">
+                    <div class="user-asked-wrap" >
                         <div class="post-by-container">
                             <div class="user-info-wrap">
                                 <div class="post-post-on">

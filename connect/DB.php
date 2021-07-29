@@ -1,10 +1,10 @@
 <?php 
 class DB {
 
-    public $DB_NAME="bitgqltbcw1nl6jid2u2";
-    public $HOST="bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com";
-    public $USER="uboe6mrf9gqq6mvo";
-    public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
+    // public $DB_NAME="bitgqltbcw1nl6jid2u2";
+    // public $HOST="bitgqltbcw1nl6jid2u2-mysql.services.clever-cloud.com";
+    // public $USER="uboe6mrf9gqq6mvo";
+    // public $PASSWORD="LZ55sk6B8o7IjVP5DyYM";
 
     private static function connnect() {
         $pdo = new PDO("mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4", 'root','');

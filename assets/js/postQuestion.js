@@ -90,7 +90,7 @@ $(function() {
                         formData.append('questionContent', content);
                         formData.append('userId', userId);
                         $.ajax({
-                            url: 'http://localhost/stackoverflow_v1/core/ajax/postQuestion.php', 
+                            url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
                             cache: false,
                             contentType: false,
                             processData: false,

@@ -5,6 +5,8 @@ require_once '../../connect/login.php';
 
 $userid = login::isLoggedIn();
 
+echo $_POST["questionTitle"];
+
 if (isset($_POST["questionTitle"]) && isset($_POST["questionTags"]) && isset($_POST["questionContent"])){
     $questionTitle = $_POST["questionTitle"];
     $questionTags = $_POST["questionTags"];

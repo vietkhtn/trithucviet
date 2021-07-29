@@ -1,3 +1,4 @@
+
 <?php 
 
 $hostInfo = 'mysql:host=localhost; dbname=stackoverflow; charset=utf8mb4';

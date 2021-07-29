@@ -76,7 +76,7 @@ $(function() {
         formData.append('questionId', questionId);
         formData.append('voteType', 'Up');
         $.ajax({
-            url: 'http://localhost/stackoverflow_v1/core/ajax/vote.php', 
+            url: 'http://localhost/trithucviet/core/ajax/vote.php', 
             cache: false,
             contentType: false,
             processData: false,
@@ -95,7 +95,7 @@ $(function() {
             formData.append('questionId', questionId);
             formData.append('voteType', 'Down');
             $.ajax({
-                url: 'http://localhost/stackoverflow_v1/core/ajax/vote.php', 
+                url: 'http://localhost/trithucviet/core/ajax/vote.php', 
                 cache: false,
                 contentType: false,
                 processData: false,
