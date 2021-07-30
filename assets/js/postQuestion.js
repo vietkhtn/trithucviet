@@ -74,8 +74,7 @@ $(function() {
         debugger;
         if(contentText != ""){
             $.ajax({
-                async: true,
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(content),
+                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
                 type: 'GET',
                 headers: {
                     "accept": "application/json",
@@ -99,7 +98,6 @@ $(function() {
                             contentType: false,
                             processData: false,
                             data: formData,
-                            async: true,
                             type: 'post',
                             success: function(){
                                 location.reload();

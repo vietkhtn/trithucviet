@@ -8,7 +8,7 @@ $(function() {
         // If content contains words -> check words in content
         if(contentText != ""){
             $.ajax({
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(content),
+                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
                 type: 'GET',
                 headers: {
                     "accept": "application/json",

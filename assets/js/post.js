@@ -125,6 +125,63 @@ $(function() {
          })
      }
 
+    // //Handle post question click
+    // $('.ask-button').on('click', function(){
+    //     var title = document.getElementById('questionTitle').value;
+    //     var listTag = document.getElementsByClassName('tag-name-wrapper');
+    //     var iframe = document.getElementById('questionText');
+    //     var content = iframe.contentWindow.document.body.innerHTML;
+    //     var contentText = iframe.contentWindow.document.body.innerText;
+    //     var tags = new Array();
+    //     for (var i = 0; i < listTag.length; i++) {
+    //         tags.push(listTag[i].innerText);
+    //     }
+    //     //Call API check Bad Word in content
+    //     // If content contains words -> check words in content
+
+    //     if(contentText != ""){
+    //         $.ajax({
+    //             url: 'https://checkbadwordapi.herokuapp.com/check/' + content,
+    //             type: 'GET',
+    //             headers: {
+    //                 "accept": "application/json",
+    //                 "api-key": "Y2hlY2tiYWR3b3JkYXBpa2V5"
+    //             },
+    //             async: false,
+    //         }).done(function (data) {
+    //             // if content contains bad words -> alert error
+    //             if (data.is_bad == true){
+    //                 alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
+    //             } 
+
+    //             // else if content is good -> store in db
+    //             else {
+    //                 var formData = new FormData();
+    //                 formData.append('questionTitle', title);
+    //                 formData.append('questionTags', tags);
+    //                 formData.append('questionContent', content);
+    //                 formData.append('userId', userId);
+    //                 $.ajax({
+    //                     url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
+    //                     cache: false,
+    //                     contentType: false,
+    //                     processData: false,
+    //                     data: formData,
+    //                     type: 'post',
+    //                     async: false,
+    //                 }).done(function(){
+    //                     location.reload();
+    //                 })
+    //             }
+    //         })
+    //     }
+    //     // else if content just include image
+    //     else {
+    //         alert("Your question should contain body content. Please write the body !");
+    //     }
+    // })
+
+
     //Handle post question click
     $('.ask-button').on('click', function(){
         var title = document.getElementById('questionTitle').value;
@@ -136,42 +193,43 @@ $(function() {
         for (var i = 0; i < listTag.length; i++) {
             tags.push(listTag[i].innerText);
         }
-        //Call API check Bad Word in content
+        // Call API check Bad Word in content
         // If content contains words -> check words in content
-
         if(contentText != ""){
             $.ajax({
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + content,
+                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
                 type: 'GET',
                 headers: {
                     "accept": "application/json",
                     "api-key": "Y2hlY2tiYWR3b3JkYXBpa2V5"
                 },
-                async: false,
-            }).done(function (data) {
-                // if content contains bad words -> alert error
-                if (data.is_bad == true){
-                    alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
-                } 
-
-                // else if content is good -> store in db
-                else {
-                    var formData = new FormData();
-                    formData.append('questionTitle', title);
-                    formData.append('questionTags', tags);
-                    formData.append('questionContent', content);
-                    formData.append('userId', userId);
-                    $.ajax({
-                        url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        data: formData,
-                        type: 'post',
-                        async: false,
-                    }).done(function(){
-                        location.reload();
-                    })
+                success: function (data) {
+                    // if content contains bad words -> alert error
+                    if (data.is_bad == true){
+                        alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
+                    } 
+                    // else if content is good -> store in db
+                    else {
+                        var formData = new FormData();
+                        formData.append('questionTitle', title);
+                        formData.append('questionTags', tags);
+                        formData.append('questionContent', content);
+                        formData.append('userId', userId);
+                        $.ajax({
+                            url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: formData,
+                            type: 'post',
+                            success: function(){
+                                location.reload();
+                            }
+                        })
+                    }
+                },
+                error: function(){
+                    alert("Error: Cannot load data");
                 }
             })
         }
