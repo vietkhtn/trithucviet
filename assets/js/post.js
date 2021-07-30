@@ -141,40 +141,37 @@ $(function() {
 
         if(contentText != ""){
             $.ajax({
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + contentText,
+                url: 'https://checkbadwordapi.herokuapp.com/check/' + content,
                 type: 'GET',
                 headers: {
                     "accept": "application/json",
                     "api-key": "Y2hlY2tiYWR3b3JkYXBpa2V5"
                 },
-                success: function (data) {
-                    // if content contains bad words -> alert error
-                    if (data.is_bad == true){
-                        alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
-                    } 
-    
-                    // else if content is good -> store in db
-                    else {
-                        var formData = new FormData();
-                        formData.append('questionTitle', title);
-                        formData.append('questionTags', tags);
-                        formData.append('questionContent', content);
-                        formData.append('userId', userId);
-                        $.ajax({
-                            url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            data: formData,
-                            type: 'post',
-                            success: function(){
-                                location.reload();
-                            }
-                        })
-                    }
-                },
-                error: function(){
-                    alert("Error: Cannot load data");
+                async: false,
+            }).done(function (data) {
+                // if content contains bad words -> alert error
+                if (data.is_bad == true){
+                    alert("Question contains " + data.total_bad_word +" unsuitable words: [" + data.list_of_bad_words + "].\nPlease re-check the content.")
+                } 
+
+                // else if content is good -> store in db
+                else {
+                    var formData = new FormData();
+                    formData.append('questionTitle', title);
+                    formData.append('questionTags', tags);
+                    formData.append('questionContent', content);
+                    formData.append('userId', userId);
+                    $.ajax({
+                        url: 'http://localhost/trithucviet/core/ajax/postQuestion.php', 
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: formData,
+                        type: 'post',
+                        async: false,
+                    }).done(function(){
+                        location.reload();
+                    })
                 }
             })
         }

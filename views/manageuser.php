@@ -63,8 +63,6 @@
                                             <th class="border-top-0">Email</th>
                                             <th class="border-top-0">BirthDay</th>
                                             <th class="border-top-0">Gender</th>
-                                            <th class="border-top-0">Role</th>
-                                            <th class="border-top-0">Status</th>
                                             <th class="border-top-0">Manage</th>
                                         </tr>
                                     </thead>
@@ -77,8 +75,6 @@
                                             <td><?php echo($user->email) ?></td>
                                             <td><?php echo($user->birthday) ?></td>
                                             <td><?php echo($user->gender) ?></td>
-                                            <td><?php echo($user->role) ?></td>
-                                            <td><?php echo($user->status) ?></td>
                                             <td>
                                                 <a href="../controllers/adminController.php?role=<?php echo $user->role; ?>&id=<?php echo $user->user_id; ?>" class="btnRole" >
                                                     <i class="material-icons" title="Role">admin_panel_settings</i>

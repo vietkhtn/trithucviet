@@ -8,7 +8,7 @@ $(function() {
         // If content contains words -> check words in content
         if(contentText != ""){
             $.ajax({
-                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(contentText),
+                url: 'https://checkbadwordapi.herokuapp.com/check/' + encodeURIComponent(content),
                 type: 'GET',
                 headers: {
                     "accept": "application/json",
@@ -24,7 +24,7 @@ $(function() {
                         var formData = new FormData();
                         formData.append('userId', userId);
                         formData.append('questionId', questionId);
-                        formData.append('answerContent', contentText);
+                        formData.append('answerContent', content);
                         $.ajax({
                             url: 'http://localhost/trithucviet/core/ajax/postAnswer.php', 
                             cache: false,
