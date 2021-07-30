@@ -11,21 +11,21 @@
             <div class="public-wrap-child">
                 <div class="question-wrap">
                     <img src="../assets/image/questionLogo.png" class="side-bar-logo">
-                    <a href="master-layout.php">
+                    <a href="../views/index.php">
                         <div class="side-bar-text">Questions</div>
                     </a>
                 </div>
                 
                 <div class="tags-wrap">
                     <img src="../assets/image/tagsLogo.png" class="side-bar-logo">
-                    <a href="master-layout.php">
+                    <a href="../views/tag.php">
                         <div class="side-bar-text">Tags</div>
                     </a>
                 </div>
 
                 <div class="users-wrap">
                     <img src="../assets/image/userLogo.png" class="side-bar-logo">
-                    <a href="master-layout.php">
+                    <a href="../views/user_page.php">
                         <div class="side-bar-text">Users</div>
                     </a>
                 </div>

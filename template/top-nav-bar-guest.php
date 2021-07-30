@@ -25,13 +25,13 @@
         </div>
         <!-- SignUp Button -->
         <div class="signup-button">
-            <a href="sign-up.php">
+            <a href="../views/sign-up.php">
             <button type="button" href="log-in.php" class="sign-in signup">Sign up</button>
             </a>
         </div>
         <!-- Login Button -->
         <div class="login-button">
-            <a href="log-in.php">
+            <a href="../views/log-in.php">
             <button type="button" href="log-in.php" class="sign-in login">Log in</button>
             </a>
         </div>
