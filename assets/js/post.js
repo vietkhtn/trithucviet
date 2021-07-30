@@ -223,7 +223,9 @@ $(function() {
                             data: formData,
                             type: 'post',
                             success: function(){
-                                location.reload();
+                                alert('ok');
+
+                                // location.reload();
                             }
                         })
                     }

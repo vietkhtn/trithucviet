@@ -24,4 +24,4 @@ if (isset($_POST['userId']) && isset($_POST['questionId'])){
     }
 }
 
-?>
+?> 

@@ -1,4 +1,4 @@
-<a href="index.php">
+<a href="../views/index.php">
             <img src="../assets/image/stackoverflow.png" class="img-logo"/>
         </a>
 

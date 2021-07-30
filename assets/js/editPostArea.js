@@ -75,7 +75,6 @@ $(function() {
         formData.append('userId', userId);
         formData.append('questionId', questionId);
         formData.append('voteType', 'Up');
-        console.log(formData.get('userId'));
         $.ajax({
             url: 'http://localhost/trithucviet/core/ajax/vote.php', 
             cache: false,
@@ -84,7 +83,8 @@ $(function() {
             type: 'post',
             data: formData,
             success: function(){
-                location.reload();
+                alert(formData.get('userId') + formData.get('questionId') + formData.get('voteType'));
+                // location.reload();
             }, 
         })
     })

@@ -2,6 +2,7 @@
     require_once '../controllers/logInController.php';
     require_once '../controllers/profileController.php';
     require_once '../controllers/questionDetailController.php';
+
 ?>
 
 <!DOCTYPE html>
