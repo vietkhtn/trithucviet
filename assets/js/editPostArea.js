@@ -83,8 +83,7 @@ $(function() {
             type: 'post',
             data: formData,
             success: function(){
-                alert(formData.get('userId') + formData.get('questionId') + formData.get('voteType'));
-                // location.reload();
+                location.reload();
             }, 
         })
     })
@@ -97,6 +96,24 @@ $(function() {
             formData.append('voteType', 'Down');
             $.ajax({
                 url: 'http://localhost/trithucviet/core/ajax/vote.php', 
+                cache: false,
+                contentType: false,
+                processData: false,
+                type: 'post',
+                data: formData,
+                success: function(){
+                    location.reload();
+                }, 
+            })
+        })
+
+         // Handle down vote click
+         $('.spam-button').on('click', function() {
+            var formData = new FormData();
+            formData.append('userId', userId);
+            formData.append('questionId', questionId);
+            $.ajax({
+                url: 'http://localhost/trithucviet/core/ajax/spam.php', 
                 cache: false,
                 contentType: false,
                 processData: false,

@@ -28,6 +28,9 @@ require_once '../controllers/questionDetailController.php';
                     <div class="down-vote-button">
                         <img src="../assets/image/downVote.png" class="down-vote-button-css">
                     </div>
+                    <div class="spam-button">
+                        <img src="../assets/image/spam.png" class="spam-button" style="width: 40px">
+                    </div>
                 </div>
                 <div class="question-content">
                     <div class="content-text-wrap">

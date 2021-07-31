@@ -20,8 +20,7 @@ if (isset($_POST['userId']) && isset($_POST['questionId'])){
         }
     }
     else {
-        echo "Cannot vote your own question.";
+        echo "Cannot spam your own question.";
     }
 }
-
 ?> 

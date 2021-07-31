@@ -52,9 +52,9 @@
             </a>
         </div>
     </div>
-    <div class="main">
+    <div class="main" style="background: white">
         <div class="left-side">
-            <img src="../assets/image/stackoverflow.png" alt="">
+            <img src="../assets/image/stackoverflow.png" alt="" style="margin: 100px">
         </div>  
         <div class="right-side">
             <div class="error">
