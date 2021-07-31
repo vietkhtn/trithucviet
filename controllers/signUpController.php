@@ -51,24 +51,24 @@ if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
                         if($loadFromUser->checkMobile($emailOrMobile) === true){
                             $error = MESSAGE::mobileAlreadyExists;
                         }else{
-                            // Insert user in db
-                            $user_id = $loadFromUser->create('users', array('first_name' => $first_name, 'last_name' => $last_name, 
-                                                            'mobile' => $emailOrMobile, 'password' => password_hash($password, PASSWORD_BCRYPT), 
-                                                            'screen_name'=> $screenName , 'userLink' => $userLink, 'birthday' => $birthDate, 'gender' => $gender));
-    
-                            // Create Profile user
-                            $loadFromUser->create('profile', array('user_id'=> $user_id, 'first_name' => $first_name, 'last_name' => $last_name, 'birthday' => $birthDate, 'gender' => $gender,
-                                                                    'profilePic' => '../assets/image/defaultProfilePic.png', 'coverPic' => '../assets/image/defaultCoverPic.png'));
-                            
-                            // Create token for user
-                            $tstrong = true;
-                            $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
-                            $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
-    
-                            // Set user cookie
-                            setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
-                            // redirect to homepage
-                            header('Location: log-in.php');
+                         // Insert user in db
+                         $user_id = $loadFromUser->create('users', array('first_name' => $first_name, 'last_name' => $last_name, 'email' => '',
+                         'mobile' => $emailOrMobile, 'password' => password_hash($password, PASSWORD_BCRYPT), 
+                         'screen_name'=> $screenName , 'userLink' => $userLink, 'birthday' => $birthDate, 'gender' => $gender));
+
+                        // Create Profile user
+                        $loadFromUser->create('profile', array('user_id'=> $user_id, 'firstName' => $first_name, 'lastName' => $last_name, 'birthday' => $birthDate, 'gender' => $gender,
+                        'profilePic' => '../assets/image/defaultProfilePic.png', 'coverPic' => '../assets/image/defaultCoverPic.png'));
+
+                        // Create token for user
+                        $tstrong = true;
+                        $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
+                        $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
+
+                        // Set user cookie
+                        setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
+                        // redirect to homepage
+                        header('Location: log-in.php');
                         }
                     }
                 }
@@ -90,7 +90,7 @@ if (isset($_POST['first-name']) && !empty($_POST['first-name'])) {
 
                         // Create Profile user
                         $loadFromUser->create('profile', array('user_id'=> $user_id, 'firstName' => $first_name, 'lastName' => $last_name, 'birthday' => $birthDate, 'gender' => $gender,
-                        'profilePic' => '../assets/image/defaultProfile.png', 'coverPic' => '../assets/image/defaultCover.png'));
+                        'profilePic' => '../assets/image/defaultProfilePic.png', 'coverPic' => '../assets/image/defaultCoverPic.png'));
 
                         // Create token for user
                         $tstrong = true;

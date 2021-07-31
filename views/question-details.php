@@ -1,5 +1,7 @@
 <?php 
 require_once '../controllers/questionDetailController.php';
+var_dump($questionData->userLink);
+
 ?>
 
 
@@ -29,7 +31,7 @@ require_once '../controllers/questionDetailController.php';
                         <img src="../assets/image/downVote.png" class="down-vote-button-css">
                     </div>
                     <div class="spam-button">
-                        <img src="../assets/image/spam.png" class="spam-button" style="width: 40px">
+                        <img src="../assets/image/spam.png" class="spam-button" style="width: 40px; cursor: pointer;">
                     </div>
                 </div>
                 <div class="question-content">
@@ -62,9 +64,12 @@ require_once '../controllers/questionDetailController.php';
                                         <img src="<?php echo $questionData->profilePic; ?>" class="user-info-profile-pic">
                                     </div>
                                     <div class="detail-info-container">
-                                        <div class="user-info-name">
-                                            <?php echo $questionData->firstName.' '.$questionData->lastName; ?>
-                                        </div>
+                                        
+                                            <div class="user-info-name">
+                                                <a href="../template/layout-user-login.php?username=<?php echo $questionData->userLink?>">
+                                                    <?php echo $questionData->firstName.' '.$questionData->lastName; ?>
+                                                </a>
+                                            </div>
                                         <div class="achieve-info">
                                             <div class="total-vote-wrap">
                                                 <img src="../assets/image/dotGrey.png" class="achieve-logo-css">
@@ -122,9 +127,11 @@ require_once '../controllers/questionDetailController.php';
                                                         <img src="<?php echo $answer->profilePic; ?>" class="user-info-profile-pic">
                                                     </div>
                                                     <div class="detail-info-container">
-                                                        <div class="user-info-name">
-                                                            <?php echo $answer->firstName.' '.$answer->lastName; ?>
-                                                        </div>
+                                                        <a href="../template/layout-user-login.php?username=<?php echo $questionData->userLink?>">
+                                                            <div class="user-info-name">
+                                                                <?php echo $answer->firstName.' '.$answer->lastName; ?>
+                                                            </div>
+                                                        </a>
                                                         <div class="achieve-info">
                                                             <div class="total-vote-wrap">
                                                                 <img src="../assets/image/dotGrey.png" class="achieve-logo-css">

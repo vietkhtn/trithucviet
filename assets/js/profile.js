@@ -39,6 +39,7 @@ $(function() {
                         success: function(data){
                             $('.profile-cover-wrap').css('background-image','url(' + data + ')');
                             $('.add-cover-options').hide();
+                            location.reload();
                         }
                     })
                 }

@@ -14,21 +14,21 @@ if (isset($_POST['in-email-mobile']) && !empty($_POST['in-email-mobile'])){
         }else { // If user type mobile
             if(DB::query("SELECT mobile from users WHERE mobile = :mobile", array('mobile' => $emailOrMobile))){
                 // Check password hash
-                if (password_verify($password, DB::query("SELECT password from users WHERE mobile = :mobile", array(':mobile' => $emailOrMobile))[0]['password'])){
-                    // Get user_id
-                    $user_id = DB::query("SELECT user_id from users WHERE mobile = :mobile", array(':mobile' => $emailOrMobile))[0]['user_id'];
+            if (password_verify($password, DB::query("SELECT password from users WHERE mobile = :mobile", array(':mobile' => $emailOrMobile))[0]['password'])){
+                // Get user_id
+                $user_id = DB::query("SELECT user_id from users WHERE mobile = :mobile", array(':mobile' => $emailOrMobile))[0]['user_id'];
+                $tstrong = true;
+                $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
+                $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
 
-                    $tstrong = true;
-                    $token = bin2hex(openssl_random_pseudo_bytes(64, $tstrong));
-                    $loadFromUser->create('token', array('token' => sha1($token), 'user_id' => $user_id));
-                    $userLink = $loadFromUser->userLinkByUserId($user_id);
-                    // Set user cookie
-                    setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
-                    // redirect to user page
-                    header("Location: ../template/layout-user-login.php?username=$userLink");
-                }else{ // Wrong password
-                    $error = MESSAGE::wrongPassword;
-                }
+                $userLink = $loadFromUser->userLinkByUserId($user_id);
+                // Set user cookie
+                setcookie('FBID', $token, time()+60*60*24*7, '/', NULL, NULL, true);
+                // redirect to user page
+                header("Location: ../template/layout-user-login.php?username=$userLink");
+            }else{ // Wrong password
+                $error = MESSAGE::wrongPassword;
+            }
             }else{
                 $error = MESSAGE::userNotExistInDatabase;
             }

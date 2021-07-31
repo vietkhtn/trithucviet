@@ -6,7 +6,7 @@ class Question extends User {
     }
 
     public function questionData($questionId) {
-        $statement = $this->pdo->prepare('SELECT * FROM question LEFT JOIN `profile` ON question.user_id = profile.user_id
+        $statement = $this->pdo->prepare('SELECT * FROM question LEFT JOIN `profile` ON question.user_id = profile.user_id LEFT JOIN users ON  profile.user_id = users.user_id
                                             WHERE question_id = :question_id');
         $statement->bindParam(':question_id', $questionId, PDO::PARAM_INT);
         $statement->execute();
